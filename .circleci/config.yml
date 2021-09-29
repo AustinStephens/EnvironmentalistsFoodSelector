@@ -2,14 +2,13 @@ version: '2.1'
 orbs:
   android: circleci/android@1.0
 
-command:
-
-test:
-  description: "Run test"
-  steps:
-    - run:
-        command: bundle exec test -f pretty -f junit -o
-        when: always
+commands:
+  test:
+    description: "Run test"
+    steps:
+      - run:
+          command: bundle exec test -f pretty -f junit -o
+          when: always
 
 jobs:
   test:

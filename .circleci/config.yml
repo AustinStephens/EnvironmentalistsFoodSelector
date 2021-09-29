@@ -2,11 +2,6 @@ version: '2.1'
 orbs:
   android: circleci/android@1.0
 
-commands:
-  test1:
-    description: "Test Dependencies"
-    steps:
-      -run bundle check --path="External Libraries" || bundle install --path="External Libraries" --jobs=4 --retry=3
 
 test:
   description: "Run cucumber"

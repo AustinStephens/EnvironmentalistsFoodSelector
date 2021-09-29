@@ -22,8 +22,9 @@ public class ExampleUnitTest {
     public void testExample1(){ assertEquals("Test Skeleton1 Code", app.skeleton1());}
     @Test
     public void testExample2(){ assertEquals("Test Skeleton2 Code", app.skeleton2());}
+    @Test
+    public void testLong(){assertEquals((double)2.5,app.doubleTest1(),0);}
+    @Test
+    public void testMath(){assertEquals(9,app.testSquare());}
 
-    public void main(String[] test){
-
-    }
 }

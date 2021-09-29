@@ -25,6 +25,14 @@ public class MainActivity extends AppCompatActivity {
         return "Test Skeleton2 Code";
     }
 
+    public double doubleTest1() {
+        double temp = (double)5/2;
+        return temp;
+    }
 
-
+    public int testSquare() {
+        double x;
+        x = Math.pow(3,2);
+        return (int)x;
+    }
 }

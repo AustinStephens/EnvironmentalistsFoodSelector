@@ -19,7 +19,7 @@ public class ExampleUnitTest {
     @Test
     public void testExample0(){ assertEquals("Test Skeleton0 Code", app.skeleton0());}
     @Test
-    public void testExample1(){ assertEquals("Test Skeleton1 Code", app.skeleton1());}
+    public void testExample1(){ assertEquals("Test Skeleton0 Code", app.skeleton1());}
     @Test
     public void testExample2(){ assertEquals("Test Skeleton2 Code", app.skeleton2());}
 

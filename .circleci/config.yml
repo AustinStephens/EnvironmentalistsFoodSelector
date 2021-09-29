@@ -1,15 +1,27 @@
 version: '2.1'
 orbs:
   android: circleci/android@1.0
+
+commands:
+  test1:
+    description: "Test Dependencies"
+    steps:
+      -run bundle check --path="External Libraries" || bundle install --path="External Libraries" --jobs=4 --retry=3
+
+test:
+  description: "Run cucumber"
+  steps:
+    - run:
+        command: bundle exec test -f pretty -f junit -o
+        when: always
+
 jobs:
   test:
-    executor:
-      name: android/android-machine
-      resource-class: large
+    executor: default
     steps:
       - checkout
-      - android/start-emulator-and-run-tests:
-          system-image: system-images;android-29;default;x86
+      - test1
+      - test
 workflows:
   test:
     jobs:

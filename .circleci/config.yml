@@ -12,7 +12,7 @@ commands:
 
 jobs:
   test:
-    executor: default
+    executor: test
     steps:
       - checkout
       - test

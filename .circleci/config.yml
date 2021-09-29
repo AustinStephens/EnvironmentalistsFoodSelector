@@ -1,22 +1,17 @@
-version: '2.1'
-orbs:
-  android: circleci/android@1.0
-
-commands:
-  test:
-    description: "Run test"
-    steps:
-      - run:
-          command: bundle exec test -f pretty -f junit -o
-          when: always
-
-jobs:
-  test:
-    executor: test
-    steps:
-      - checkout
-      - test
-workflows:
-  test:
-    jobs:
-      - test # run the `echo` command
+#
+# Build configuration for Circle CI
+#
+general:
+artifacts:
+  - /home/ubuntu/EnvironmentalistsFoodSelector/app/build/outputs/apk/
+machine:
+environment:
+ANDROID_HOME: /usr/local/android-sdk-linux
+dependencies:
+override:
+  - echo y | android update sdk --no-ui --all --filter tools,platform-tools,build-tools-19.1.0,android-19,extra-google-m2repository,extra-google-google_play_services,extra-android-support
+  - ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
+test:
+override:
+  - (./gradlew assemble):
+timeout: 360

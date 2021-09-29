@@ -5,7 +5,7 @@ orbs:
 commands:
 
 test:
-  description: "Run cucumber"
+  description: "Run test"
   steps:
     - run:
         command: bundle exec test -f pretty -f junit -o

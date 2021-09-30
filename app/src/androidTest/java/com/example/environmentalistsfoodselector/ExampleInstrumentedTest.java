@@ -1,4 +1,4 @@
-package cen3031.environmentalistsfoodselector;
+package com.example.environmentalistsfoodselector;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("cen3031.environmentalistsfoodselector", appContext.getPackageName());
+        assertEquals("com.example.environmentalistsfoodselector", appContext.getPackageName());
     }
 }

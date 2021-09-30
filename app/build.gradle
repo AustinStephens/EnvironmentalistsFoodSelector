@@ -6,7 +6,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "cen3031.environmentalistsfoodselector"
+        applicationId "com.example.environmentalistsfoodselector"
         minSdk 21
         targetSdk 31
         versionCode 1

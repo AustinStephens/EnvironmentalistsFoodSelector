@@ -1,3 +1,120 @@
 <resources>
     <string name="app_name">EnvironmentalistsFoodSelector</string>
+    <string-array name="categories">
+        <item>Food Category</item>
+        <item>Baked Goods</item> <!-- Combine with Biscuits and Confections -->
+        <item>Dairy &amp; Substitutes</item>
+        <item>Drinks</item>
+        <item>Dry Produce &amp; Spices</item>
+        <item>Fruit</item>
+        <item>Meat &amp; Other Protein Sources</item>  <!-- Combine w/ Eggs -->
+        <item>Nuts &amp; Seeds</item>
+        <item>Oils</item>
+        <item>Processed Foods</item>
+        <item>Jams and Honey</item>
+        <item>Sauces</item>
+        <item>Seafood</item>
+        <item>Sweets</item>
+        <item>Vegetables</item>  <!-- Combine w/ Potatoes -->
+    </string-array>
+
+    <string-array name="BakedFoods">
+        <item>Food Item</item>
+    </string-array>
+
+    <string-array name="DairyFoods">
+        <item>Food Item</item>
+    </string-array>
+
+    <string-array name="DrinkFoods">
+        <item>Food Item</item>
+        <item>Americano</item>
+    </string-array>
+
+    <string-array name="DryFoods">
+        <item>Food Item</item>
+        <item>Allspice</item>
+        <item>Almond Extract</item>
+    </string-array>
+
+    <string-array name="FruitFoods">
+        <item>Food Item</item>
+    </string-array>
+
+    <string-array name="MeatFoods">
+        <item>Food Item</item>
+    </string-array>
+
+    <string-array name="NutsFoods">
+        <item>Food Item</item>
+        <item>Almonds</item>
+        <item>Cashews</item>
+    </string-array>
+
+    <string-array name="OilsFoods">
+        <item>Food Item</item>
+    </string-array>
+
+    <string-array name="ProcessedFoods">
+        <item>Food Item</item>
+    </string-array>
+
+    <string-array name="JamsFoods">
+        <item>Food Item</item>
+    </string-array>
+
+    <string-array name="SaucesFoods">
+        <item>Food Item</item>
+    </string-array>
+
+    <string-array name="SeafoodFoods">
+        <item>Food Item</item>
+    </string-array>
+
+    <string-array name="SweetsFoods">
+        <item>Food Item</item>
+    </string-array>
+
+    <string-array name="VegetableFoods">
+        <item>Food Item</item>
+    </string-array>
+
+    <string-array name="AllFoods">
+        <item>Food Item</item>
+        <item>Allspice</item>
+        <item>Almond Extract</item>
+        <item>Almonds</item>
+        <item>Americano</item>
+    </string-array>
+
+    <string-array name="WeightUnits">
+        <item>g</item>
+        <item>kg</item>
+        <item>oz</item>
+        <item>lb</item>
+    </string-array>
+
+    <string-array name="VolumeUnits">
+        <item>mL</item>
+        <item>L</item>
+        <item>tsp</item>
+        <item>tbsp</item>
+        <item>oz</item>
+        <item>cup</item>
+        <item>gallon</item>
+    </string-array>
+
+    <string-array name="AllUnits">
+        <item>g</item>
+        <item>kg</item>
+        <item>oz</item>
+        <item>lb</item>
+        <item>mL</item>
+        <item>L</item>
+        <item>tsp</item>
+        <item>tbsp</item>
+        <item>fl oz</item>
+        <item>cup</item>
+        <item>gallon</item>
+    </string-array>
 </resources>

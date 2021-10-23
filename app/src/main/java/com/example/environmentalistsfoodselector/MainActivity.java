@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) { // i is the position in the array
                 if(i > 0) { // first position is invalid
                     // selects the string array resource to populate the foods dropdown with
-                    ArrayAdapter<String> foodAdapter = createAdapter(foodsArrays[i]);
+                    ArrayAdapter<String> foodAdapter = createAdapter(foodsArrays[i-1]);
                     foodAdapter.setDropDownViewResource(R.layout.spinner_item);
                     foods.setAdapter(foodAdapter);
                 }

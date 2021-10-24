@@ -20,71 +20,534 @@
 
     <string-array name="BakedFoods">
         <item>Food Item</item>
+        <item>Bagel</item>
+        <item>Baguette</item>
+        <item>Bread</item>
+        <item>Cake</item>
+        <item>Cheesecake</item>
+        <item>Crepe</item>
+        <item>Crumpet</item>
+        <item>Doughnut</item>
+        <item>Fruit Pie</item>
+        <item>Muffin</item>
+        <item>Naan Bread</item>
+        <item>Pancake</item>
+        <item>Pita Bread</item>
+        <item>Scone</item>
+        <item>Tortilla</item>
+        <item>Waffle</item>
     </string-array>
 
     <string-array name="DairyFoods">
         <item>Food Item</item>
+        <item>Butter</item>
+        <item>Buttermilk</item>
+        <item>Cheese</item>
+        <item>Ice Cream</item>
+        <item>Milk</item>
+        <item>Milk - Almond</item>
+        <item>Milk - Soy</item>
+        <item>Sour Cream</item>
+        <item>Yogurt</item>
     </string-array>
 
     <string-array name="DrinkFoods">
         <item>Food Item</item>
         <item>Americano</item>
+        <item>Apple Juice</item>
+        <item>Beer</item>
+        <item>Black Tea</item>
+        <item>Bottled Water</item>
+        <item>Brandy</item>
+        <item>Cappuccino</item>
+        <item>Espresso</item>
+        <item>Fruit Juice</item>
+        <item>Grapefruit Juice</item>
+        <item>Green Tea</item>
+        <item>Herbal Tea</item>
+        <item>Hot Chocolate</item>
+        <item>Instant Coffee</item>
+        <item>Orange Juice</item>
+        <item>Pineapple Juice</item>
+        <item>Rum</item>
+        <item>Soft Drink</item>
+        <item>Tequila</item>
+        <item>Vodka</item>
+        <item>Whiskey</item>
+        <item>Wine</item>
     </string-array>
 
     <string-array name="DryFoods">
         <item>Food Item</item>
-        <item>Allspice</item>
-        <item>Almond Extract</item>
+        <item>Basil</item>
+        <item>Bay Leaves</item>
+        <item>Black Beans</item>
+        <item>Black Pepper</item>
+        <item>Chilli Power</item>
+        <item>Chives</item>
+        <item>Cinnamon</item>
+        <item>Cumin</item>
+        <item>Dill</item>
+        <item>Granola</item>
+        <item>Kidney Beans</item>
+        <item>Lentils</item>
+        <item>Noodles</item>
+        <item>Nutmeg</item>
+        <item>Oats</item>
+        <item>Oregano</item>
+        <item>Parsley</item>
+        <item>Pasta</item>
+        <item>Rice - White</item>
+        <item>Rice - Brown</item>
+        <item>Rosemary</item>
+        <item>Salt</item>
+        <item>Soybeans</item>
+        <item>Spaghetti</item>
+        <item>Sugar - White</item>
+        <item>Sugar - Brown</item>
+        <item>Thyme</item>
+        <item>Tumeric</item>
+        <item>Vanilla</item>
+        <item>Wheat</item>
     </string-array>
 
     <string-array name="FruitFoods">
         <item>Food Item</item>
+        <item>Apples</item>
+        <item>Apricot</item>
+        <item>Avocados</item>
+        <item>Bananas</item>
+        <item>Blackberries</item>
+        <item>Blueberries</item>
+        <item>Cherries</item>
+        <item>Dates</item>
+        <item>Grapefruit</item>
+        <item>Grapes</item>
+        <item>Kiwi</item>
+        <item>Lemons</item>
+        <item>Limes</item>
+        <item>Mandarins</item>
+        <item>Mango</item>
+        <item>Melon</item>
+        <item>Nectarine</item>
+        <item>Olives</item>
+        <item>Oranges</item>
+        <item>Papaya</item>
+        <item>Peaches</item>
+        <item>Pears</item>
+        <item>Pineapples</item>
+        <item>Plums</item>
+        <item>Raisins</item>
+        <item>Raspberries</item>
+        <item>Strawberries</item>
+        <item>Tomatoes</item>
     </string-array>
 
     <string-array name="MeatFoods">
         <item>Food Item</item>
+        <item>Bacon</item>
+        <item>Beef</item>
+        <item>Chicken</item>
+        <item>Duck</item>
+        <item>Goat</item>
+        <item>Goose</item>
+        <item>Ham</item>
+        <item>Lamb</item>
+        <item>Pancetta</item>
+        <item>Pork</item>
+        <item>Rabbit</item>
+        <item>Steak</item>
+        <item>Tofu</item>
+        <item>Turkey</item>
+        <item>Veal</item>
+        <item>Venison</item>
     </string-array>
 
     <string-array name="NutsFoods">
         <item>Food Item</item>
         <item>Almonds</item>
         <item>Cashews</item>
+        <item>Chestnuts</item>
+        <item>Hazelnuts - Chocolate</item>
+        <item>Mixed Nuts</item>
+        <item>Peanuts</item>
+        <item>Pecans</item>
+        <item>Pistachio</item>
+        <item>Pumpkin Seeds</item>
+        <item>Sesame Seeds</item>
+        <item>Sunflower Seeds</item>
+        <item>Walnuts</item>
     </string-array>
 
     <string-array name="OilsFoods">
         <item>Food Item</item>
+        <item>Coconut Oil</item>
+        <item>Corn Oil</item>
+        <item>Olive Oil</item>
+        <item>Palm Oil</item>
+        <item>Peanut Oil</item>
+        <item>Rapeseed Oil</item>
+        <item>Soybean Oil</item>
+        <item>Sunflower Oil</item>
+        <item>Vegetable Oil</item>
     </string-array>
 
     <string-array name="ProcessedFoods">
         <item>Food Item</item>
+        <item>Baked Beans</item>
+        <item>Chips</item>
+        <item>Custard</item>
+        <item>Fisherman Pie</item>
+        <item>Pizza</item>
+        <item>Pork Roast</item>
+        <item>Tomato Paste</item>
     </string-array>
 
     <string-array name="JamsFoods">
         <item>Food Item</item>
+        <item>Chocolate Spread</item>
+        <item>Golden Syrup</item>
+        <item>Hazelnut Paste</item>
+        <item>Hazelnut Spread</item>
+        <item>Honey</item>
+        <item>Maple Syrup</item>
+        <item>Marmalade</item>
+        <item>Peanut Butter</item>
+        <item>Treacle</item>
     </string-array>
 
     <string-array name="SaucesFoods">
         <item>Food Item</item>
+        <item>Apple Sauce</item>
+        <item>Barbeque Sauce</item>
+        <item>Bolognese Sauce</item>
+        <item>Chutney</item>
+        <item>Gravy - Beef</item>
+        <item>Gravy - Chicken</item>
+        <item>Hummus</item>
+        <item>Mayonnaise</item>
+        <item>Mustard</item>
+        <item>Pesto</item>
+        <item>Relish</item>
+        <item>Soy Sauce</item>
+        <item>Stock - Beef</item>
+        <item>Stock - Chicken</item>
+        <item>Stock - Vegetable</item>
+        <item>Tamari</item>
+        <item>Tomato Ketchup</item>
+        <item>Tomato Sauce</item>
+        <item>Vinegar</item>
+        <item>Worcestershire</item>
     </string-array>
 
     <string-array name="SeafoodFoods">
         <item>Food Item</item>
+        <item>Anchovies</item>
+        <item>Clams</item>
+        <item>Cod</item>
+        <item>Crab</item>
+        <item>Eel</item>
+        <item>Fish Sticks</item>
+        <item>Flounder</item>
+        <item>Haddock</item>
+        <item>Halibut</item>
+        <item>Herring</item>
+        <item>Lobster</item>
+        <item>Mussels</item>
+        <item>Octopus</item>
+        <item>Oysters</item>
+        <item>Prawns</item>
+        <item>Salmon</item>
+        <item>Scallops</item>
+        <item>Sea Bass</item>
+        <item>Seaweed</item>
+        <item>Shrimp</item>
+        <item>Smoked Salmon</item>
+        <item>Squid</item>
+        <item>Trout</item>
+        <item>Tuna</item>
     </string-array>
 
     <string-array name="SweetsFoods">
         <item>Food Item</item>
+        <item>Chocolate</item>
+        <item>Fudge</item>
+        <item>Liquorice</item>
+        <item>Marshmallows</item>
+        <item>Mints</item>
+        <item>Toffee</item>
     </string-array>
 
     <string-array name="VegetableFoods">
         <item>Food Item</item>
+        <item>Artichoke</item>
+        <item>Asparagus</item>
+        <item>Aubergine</item>
+        <item>Beetroot</item>
+        <item>Broccoli</item>
+        <item>Brussels Sprouts</item>
+        <item>Cabbage</item>
+        <item>Carrot</item>
+        <item>Cauliflower</item>
+        <item>Celery</item>
+        <item>Chilli Pepper</item>
+        <item>Cucumber</item>
+        <item>Garlic</item>
+        <item>Ginger</item>
+        <item>Green beans</item>
+        <item>Kale</item>
+        <item>Leek</item>
+        <item>Lettuce</item>
+        <item>Mushrooms</item>
+        <item>Onion</item>
+        <item>Peas</item>
+        <item>Peppers</item>
+        <item>Potato</item>
+        <item>Spinach</item>
+        <item>Squash</item>
+        <item>Sweet Potato</item>
+        <item>Turnips</item>
+        <item>Watercress</item>
     </string-array>
 
     <string-array name="AllFoods">
         <item>Food Item</item>
-        <item>Allspice</item>
-        <item>Almond Extract</item>
-        <item>Almonds</item>
+        <item>Bagel</item>
+        <item>Baguette</item>
+        <item>Bread</item>
+        <item>Cake</item>
+        <item>Cheesecake</item>
+        <item>Crepe</item>
+        <item>Crumpet</item>
+        <item>Doughnut</item>
+        <item>Fruit Pie</item>
+        <item>Muffin</item>
+        <item>Naan Bread</item>
+        <item>Pancake</item>
+        <item>Pita Bread</item>
+        <item>Scone</item>
+        <item>Tortilla</item>
+        <item>Waffle</item>
+        <item>Butter</item>
+        <item>Buttermilk</item>
+        <item>Cheese</item>
+        <item>Ice Cream</item>
+        <item>Milk</item>
+        <item>Milk - Almond</item>
+        <item>Milk - Soy</item>
+        <item>Sour Cream</item>
+        <item>Yogurt</item>
         <item>Americano</item>
+        <item>Apple Juice</item>
+        <item>Beer</item>
+        <item>Black Tea</item>
+        <item>Bottled Water</item>
+        <item>Brandy</item>
+        <item>Cappuccino</item>
+        <item>Espresso</item>
+        <item>Fruit Juice</item>
+        <item>Grapefruit Juice</item>
+        <item>Green Tea</item>
+        <item>Herbal Tea</item>
+        <item>Hot Chocolate</item>
+        <item>Instant Coffee</item>
+        <item>Orange Juice</item>
+        <item>Pineapple Juice</item>
+        <item>Rum</item>
+        <item>Soft Drink</item>
+        <item>Tequila</item>
+        <item>Vodka</item>
+        <item>Whiskey</item>
+        <item>Wine</item>
+        <item>Basil</item>
+        <item>Bay Leaves</item>
+        <item>Black Beans</item>
+        <item>Black Pepper</item>
+        <item>Chilli Power</item>
+        <item>Chives</item>
+        <item>Cinnamon</item>
+        <item>Cumin</item>
+        <item>Dill</item>
+        <item>Granola</item>
+        <item>Kidney Beans</item>
+        <item>Lentils</item>
+        <item>Noodles</item>
+        <item>Nutmeg</item>
+        <item>Oats</item>
+        <item>Oregano</item>
+        <item>Parsley</item>
+        <item>Pasta</item>
+        <item>Rice - White</item>
+        <item>Rice - Brown</item>
+        <item>Rosemary</item>
+        <item>Salt</item>
+        <item>Soybeans</item>
+        <item>Spaghetti</item>
+        <item>Sugar - White</item>
+        <item>Sugar - Brown</item>
+        <item>Thyme</item>
+        <item>Tumeric</item>
+        <item>Vanilla</item>
+        <item>Wheat</item>
+        <item>Apples</item>
+        <item>Apricot</item>
+        <item>Avocados</item>
+        <item>Bananas</item>
+        <item>Blackberries</item>
+        <item>Blueberries</item>
+        <item>Cherries</item>
+        <item>Dates</item>
+        <item>Grapefruit</item>
+        <item>Grapes</item>
+        <item>Kiwi</item>
+        <item>Lemons</item>
+        <item>Limes</item>
+        <item>Mandarins</item>
+        <item>Mango</item>
+        <item>Melon</item>
+        <item>Nectarine</item>
+        <item>Olives</item>
+        <item>Oranges</item>
+        <item>Papaya</item>
+        <item>Peaches</item>
+        <item>Pears</item>
+        <item>Pineapples</item>
+        <item>Plums</item>
+        <item>Raisins</item>
+        <item>Raspberries</item>
+        <item>Strawberries</item>
+        <item>Tomatoes</item>
+        <item>Bacon</item>
+        <item>Beef</item>
+        <item>Chicken</item>
+        <item>Duck</item>
+        <item>Goat</item>
+        <item>Goose</item>
+        <item>Ham</item>
+        <item>Lamb</item>
+        <item>Pancetta</item>
+        <item>Pork</item>
+        <item>Rabbit</item>
+        <item>Steak</item>
+        <item>Tofu</item>
+        <item>Turkey</item>
+        <item>Veal</item>
+        <item>Venison</item>
+        <item>Almonds</item>
+        <item>Cashews</item>
+        <item>Chestnuts</item>
+        <item>Hazelnuts - Chocolate</item>
+        <item>Mixed Nuts</item>
+        <item>Peanuts</item>
+        <item>Pecans</item>
+        <item>Pistachio</item>
+        <item>Pumpkin Seeds</item>
+        <item>Sesame Seeds</item>
+        <item>Sunflower Seeds</item>
+        <item>Walnuts</item>
+        <item>Coconut Oil</item>
+        <item>Corn Oil</item>
+        <item>Olive Oil</item>
+        <item>Palm Oil</item>
+        <item>Peanut Oil</item>
+        <item>Rapeseed Oil</item>
+        <item>Soybean Oil</item>
+        <item>Sunflower Oil</item>
+        <item>Vegetable Oil</item>
+        <item>Baked Beans</item>
+        <item>Chips</item>
+        <item>Custard</item>
+        <item>Fisherman Pie</item>
+        <item>Pizza</item>
+        <item>Pork Roast</item>
+        <item>Tomato Paste</item>
+        <item>Chocolate Spread</item>
+        <item>Golden Syrup</item>
+        <item>Hazelnut Paste</item>
+        <item>Hazelnut Spread</item>
+        <item>Honey</item>
+        <item>Maple Syrup</item>
+        <item>Marmalade</item>
+        <item>Peanut Butter</item>
+        <item>Treacle</item>
+        <item>Apple Sauce</item>
+        <item>Barbeque Sauce</item>
+        <item>Bolognese Sauce</item>
+        <item>Chutney</item>
+        <item>Gravy - Beef</item>
+        <item>Gravy - Chicken</item>
+        <item>Hummus</item>
+        <item>Mayonnaise</item>
+        <item>Mustard</item>
+        <item>Pesto</item>
+        <item>Relish</item>
+        <item>Soy Sauce</item>
+        <item>Stock - Beef</item>
+        <item>Stock - Chicken</item>
+        <item>Stock - Vegetable</item>
+        <item>Tamari</item>
+        <item>Tomato Ketchup</item>
+        <item>Tomato Sauce</item>
+        <item>Vinegar</item>
+        <item>Worcestershire</item>
+        <item>Anchovies</item>
+        <item>Clams</item>
+        <item>Cod</item>
+        <item>Crab</item>
+        <item>Eel</item>
+        <item>Fish Sticks</item>
+        <item>Flounder</item>
+        <item>Haddock</item>
+        <item>Halibut</item>
+        <item>Herring</item>
+        <item>Lobster</item>
+        <item>Mussels</item>
+        <item>Octopus</item>
+        <item>Oysters</item>
+        <item>Prawns</item>
+        <item>Salmon</item>
+        <item>Scallops</item>
+        <item>Sea Bass</item>
+        <item>Seaweed</item>
+        <item>Shrimp</item>
+        <item>Smoked Salmon</item>
+        <item>Squid</item>
+        <item>Trout</item>
+        <item>Tuna</item>
+        <item>Chocolate</item>
+        <item>Fudge</item>
+        <item>Liquorice</item>
+        <item>Marshmallows</item>
+        <item>Mints</item>
+        <item>Toffee</item>
+        <item>Artichoke</item>
+        <item>Asparagus</item>
+        <item>Aubergine</item>
+        <item>Beetroot</item>
+        <item>Broccoli</item>
+        <item>Brussels Sprouts</item>
+        <item>Cabbage</item>
+        <item>Carrot</item>
+        <item>Cauliflower</item>
+        <item>Celery</item>
+        <item>Chilli Pepper</item>
+        <item>Cucumber</item>
+        <item>Garlic</item>
+        <item>Ginger</item>
+        <item>Green beans</item>
+        <item>Kale</item>
+        <item>Leek</item>
+        <item>Lettuce</item>
+        <item>Mushrooms</item>
+        <item>Onion</item>
+        <item>Peas</item>
+        <item>Peppers</item>
+        <item>Potato</item>
+        <item>Spinach</item>
+        <item>Squash</item>
+        <item>Sweet Potato</item>
+        <item>Turnips</item>
+        <item>Watercress</item>
     </string-array>
 
     <string-array name="WeightUnits">

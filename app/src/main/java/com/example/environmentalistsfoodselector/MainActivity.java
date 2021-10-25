@@ -68,9 +68,13 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String selectItemText = (String) adapterView.getItemAtPosition(i); // gets unit name
                 currentUnit = unitsMap.get(selectItemText); // gets Unit object from unitsMap
-                String amtStr = amount.getText().toString();
-                float amt = Float.parseFloat(amtStr);
-                setLabels(carbonLabel, waterLabel, amt);
+                if(amount.getText().length() != 0) { // if food is selected and amount isnt empty
+                    String amtStr = amount.getText().toString();
+                    float amt = Float.parseFloat(amtStr);
+                    setLabels(carbonLabel, waterLabel, amt);
+                } else if (currentUnit != null){ // for when someone might clear the textbox
+                    setLabels(carbonLabel,waterLabel,0);
+                }
             }
 
             @Override
@@ -184,6 +188,26 @@ public class MainActivity extends AppCompatActivity {
                 return view;
             }
         };
+    }
+
+    // Helper functions to set labels based on currentUnit
+    public void setLabels(TextView carbonLabel, TextView waterLabel, float amt) {
+        DecimalFormat f = new DecimalFormat("#.###"); // rounds to 3 digits
+
+        // if the unit selected is a unit of volume, use 0 indices
+        if(currentUnit.weight) {
+            carbonLabel.setText(f.format(currentFood.carbonUsage[0] * amt * currentUnit.scale));
+            if(currentFood.waterUsage[0] == 0.0f)
+                waterLabel.setText("N/A");
+            else
+                waterLabel.setText(f.format(currentFood.waterUsage[0] * amt * currentUnit.scale));
+        } else { // if the unit selected is a unit of volume, use 1 indices
+            carbonLabel.setText(f.format(currentFood.carbonUsage[1] * amt * currentUnit.scale));
+            if(currentFood.waterUsage[1] == 0.0f)
+                waterLabel.setText("N/A");
+            else
+                waterLabel.setText(f.format(currentFood.waterUsage[1] * amt * currentUnit.scale));
+        }
     }
 
     // Initialize both Maps with all the information here.
@@ -442,20 +466,6 @@ public class MainActivity extends AppCompatActivity {
         foodsMap.put("Sweet Potato", new Food(234, new float[] {0.09f, 0.0f}, new float[] {1.27f, 0.0f}, new ArrayList<String>(Arrays.asList("Celery", "Brussels Sprouts")), true, false));
         foodsMap.put("Turnips", new Food(235, new float[] {0.03f, 0.0f}, new float[] {0.68f, 0.0f}, new ArrayList<String>(Arrays.asList("Artichoke", "Ginger")), true, false));
         foodsMap.put("Watercress", new Food(236, new float[] {0.0f, 0.0f}, new float[] {1.61f, 0.0f}, new ArrayList<String>(Arrays.asList("Spinach", "Cauliflower")), true, false));
-    }
-
-    // Helper functions to set labels based on currentUnit
-    public void setLabels(TextView carbonLabel, TextView waterLabel, float amt) {
-        DecimalFormat f = new DecimalFormat("#.###"); // rounds to 3 digits
-
-        // if the unit selected is a unit of volume, use 0 indices
-        if(currentUnit.weight) {
-            carbonLabel.setText(f.format(currentFood.carbonUsage[0] * amt * currentUnit.scale));
-            waterLabel.setText(f.format(currentFood.waterUsage[0] * amt * currentUnit.scale));
-        } else { // if the unit selected is a unit of volume, use 1 indices
-            carbonLabel.setText(f.format(currentFood.carbonUsage[1] * amt * currentUnit.scale));
-            waterLabel.setText(f.format(currentFood.waterUsage[1] * amt * currentUnit.scale));
-        }
     }
 
 }

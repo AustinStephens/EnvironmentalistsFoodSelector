@@ -1,6 +1,8 @@
 package com.example.environmentalistsfoodselector;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -44,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         TextView waterLabel = (TextView) findViewById(R.id.water); // water usage label
         TextInputEditText amount = (TextInputEditText) findViewById(R.id.amount); // Amount input textbox
         Spinner units = (Spinner) findViewById(R.id.units); // Units Dropdown
+        RecyclerView recFoodsList = (RecyclerView) findViewById(R.id.similarFoods);
+        recFoodsList.setLayoutManager(new LinearLayoutManager(this));
 
         //Listeners
         amount.setOnKeyListener(new View.OnKeyListener() {
@@ -120,6 +124,10 @@ public class MainActivity extends AppCompatActivity {
                     else
                         currentUnit = unitsMap.get("mL");
                     setLabels(carbonLabel, waterLabel, amt);
+
+                    //TODO: POPULATE RECOMMENDED FOODS
+                    /*RecommenedFoodsViewAdapter adapter = new RecommenedFoodsViewAdapter(this, foodsArray, namesArray, currentFood);
+                    recFoodsList.setAdapter(adapter);*/
                 }
             }
 

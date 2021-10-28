@@ -48,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
         Spinner units = (Spinner) findViewById(R.id.units); // Units Dropdown
         RecyclerView recFoodsList = (RecyclerView) findViewById(R.id.similarFoods);
         recFoodsList.setLayoutManager(new LinearLayoutManager(this));
-        ArrayList<Food> foods1 = new ArrayList<>();
-        ArrayList<String> names = new ArrayList<>();
 
         //Listeners
         amount.setOnKeyListener(new View.OnKeyListener() {

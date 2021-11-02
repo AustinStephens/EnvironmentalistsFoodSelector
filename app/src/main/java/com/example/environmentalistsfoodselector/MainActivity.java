@@ -1,10 +1,11 @@
 package com.example.environmentalistsfoodselector;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.res.Resources;
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     public HashMap<String, Unit> unitsMap;
     public Food currentFood;
     public Unit currentUnit;
+    public MyRecyclerViewAdapter rvadapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,6 +138,11 @@ public class MainActivity extends AppCompatActivity {
                     //TODO: POPULATE RECOMMENDED FOODS
                     /*RecommenedFoodsViewAdapter adapter = new RecommenedFoodsViewAdapter(this, foodsArray, namesArray, currentFood);
                     recFoodsList.setAdapter(adapter);*/
+
+                    if(currentFood!= null && currentFood.similarFoods!= null && currentFood.similarFoods.size() > 0) {
+                        System.out.println(currentFood.similarFoods);
+                        initRecycler();
+                    }
                 }
             }
 
@@ -159,6 +166,8 @@ public class MainActivity extends AppCompatActivity {
                     foodAdapter.setDropDownViewResource(R.layout.spinner_item);
                     foods.setAdapter(foodAdapter);
                 }
+
+
             }
 
             @Override
@@ -249,6 +258,87 @@ public class MainActivity extends AppCompatActivity {
                 waterLabel.setText("N/A");
             else
                 waterLabel.setText(f.format(currentFood.waterUsage[1] * amt * currentUnit.scale));
+        }
+    }
+
+    public void initRecycler(){
+        RecyclerView rv = findViewById(R.id.similarFoods);
+        rv.setHasFixedSize(true);
+        TextView tvAdd, tvUpdate;
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
+        rv.setLayoutManager(layoutManager);
+        if(currentFood!= null && currentFood.similarFoods!= null && currentFood.similarFoods.size() > 0) {
+            rvadapter = new MyRecyclerViewAdapter(this,currentFood.similarFoods);
+        }
+        else{
+            rvadapter = new MyRecyclerViewAdapter(this,new ArrayList<String>());
+        }
+
+        rv.setAdapter(rvadapter);
+    }
+
+    public static class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
+
+        private List<String> mData;
+        private LayoutInflater mInflater;
+        private ItemClickListener mClickListener;
+
+        // data is passed into the constructor
+        MyRecyclerViewAdapter(Context context, List<String> data) {
+            this.mInflater = LayoutInflater.from(context);
+            this.mData = data;
+        }
+
+        // inflates the row layout from xml when needed
+        @Override
+        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View view = mInflater.inflate(R.layout.recyclerview_row, parent, false);
+            return new ViewHolder(view);
+        }
+
+        // binds the data to the TextView in each row
+        @Override
+        public void onBindViewHolder(ViewHolder holder, int position) {
+            String animal = mData.get(position);
+            holder.myTextView.setText(animal);
+        }
+
+        // total number of rows
+        @Override
+        public int getItemCount() {
+            return mData.size();
+        }
+
+
+        // stores and recycles views as they are scrolled off screen
+        public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+            TextView myTextView;
+
+            ViewHolder(View itemView) {
+                super(itemView);
+                myTextView = itemView.findViewById(R.id.tvAnimalName);
+                itemView.setOnClickListener(this);
+            }
+
+            @Override
+            public void onClick(View view) {
+                if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
+            }
+        }
+
+        // convenience method for getting data at click position
+        String getItem(int id) {
+            return mData.get(id);
+        }
+
+        // allows clicks events to be caught
+        void setClickListener(ItemClickListener itemClickListener) {
+            this.mClickListener = itemClickListener;
+        }
+
+        // parent activity will implement this method to respond to click events
+        public interface ItemClickListener {
+            void onItemClick(View view, int position);
         }
     }
 

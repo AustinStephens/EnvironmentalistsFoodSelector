@@ -125,9 +125,23 @@ public class MainActivity extends AppCompatActivity {
                         currentUnit = unitsMap.get("mL");
                     setLabels(carbonLabel, waterLabel, amt);
 
-                    //TODO: POPULATE RECOMMENDED FOODS
-                    /*RecommenedFoodsViewAdapter adapter = new RecommenedFoodsViewAdapter(this, foodsArray, namesArray, currentFood);
-                    recFoodsList.setAdapter(adapter);*/
+                    //Array of food objects for similar foods
+                    ArrayList<Food> foodsArray = new ArrayList<>();
+
+                    // if we dont have any, we pass in an array of just the current food, it's a work around for getting the
+                    // excellent message printed into the list
+                    if(currentFood.similarFoods.isEmpty()) {
+                        foodsArray.add(currentFood);
+                    }
+                    // otherwise, we look up the food objects for each string in the similarfoods array and store them
+                    // into a parallel array
+                    for(int index = 0; index < currentFood.similarFoods.size(); index++) {
+                        foodsArray.add(foodsMap.get(currentFood.similarFoods.get(index)));
+                    }
+
+                    // set the new lists to the recycler view
+                    RecommdenedFoodsViewAdapter adapter = new RecommdenedFoodsViewAdapter(view.getContext(), foodsArray, currentFood.similarFoods, currentFood);
+                    recFoodsList.setAdapter(adapter);
                 }
             }
 

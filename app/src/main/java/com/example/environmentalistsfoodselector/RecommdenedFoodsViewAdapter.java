@@ -11,14 +11,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class RecommenedFoodsViewAdapter extends RecyclerView.Adapter<RecommenedFoodsViewAdapter.ViewHolder> {
+public class RecommdenedFoodsViewAdapter extends RecyclerView.Adapter<RecommdenedFoodsViewAdapter.ViewHolder> {
     private Food currentFood;
     private ArrayList<Food> data;
     private ArrayList<String> names;
     private LayoutInflater mInflater;
 
     // data is passed into the constructor
-    RecommenedFoodsViewAdapter(Context context, ArrayList<Food> data, ArrayList<String> names, Food currentFood) {
+    RecommdenedFoodsViewAdapter(Context context, ArrayList<Food> data, ArrayList<String> names, Food currentFood) {
         this.mInflater = LayoutInflater.from(context);
         this.data = data;
         this.names = names;
@@ -36,19 +36,26 @@ public class RecommenedFoodsViewAdapter extends RecyclerView.Adapter<RecommenedF
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Food food = data.get(position);
-        String name = names.get(position);
-        holder.nameView.setText(name);
-        DecimalFormat f = new DecimalFormat("#.###");
-        if(currentFood.weight && food.weight) {
-            holder.carbonView.setText(f.format(1 - food.carbonUsage[0]/currentFood.carbonUsage[0]) + "% less water");
-            if(currentFood.waterUsage[0] == 0.0f || food.waterUsage[0] == 0.0f) holder.waterView.setText("No Water Data");
-            else holder.waterView.setText(f.format(1 - food.waterUsage[0]/currentFood.waterUsage[0]) + "% less water");
+        if(currentFood.equals(data.get(position))) {
+            holder.nameView.setText("        Excellent Selection! No Better Foods Found!");
         } else {
-            holder.carbonView.setText(f.format(1 - food.carbonUsage[1]/currentFood.carbonUsage[1]) + "% less Carbon");
-            if(currentFood.waterUsage[1] == 0.0f || food.waterUsage[1] == 0.0f) holder.carbonView.setText("No Water Data");
-            else holder.waterView.setText(f.format(1 - food.waterUsage[1]/currentFood.waterUsage[1]) + "% less water");
+            String name = names.get(position);
+            holder.nameView.setText(name);
+            DecimalFormat f = new DecimalFormat("#.###");
+            if (currentFood.weight && food.weight) {
+                holder.carbonView.setText(f.format(1 - food.carbonUsage[0] / currentFood.carbonUsage[0]) + "% less Carbon");
+                if (currentFood.waterUsage[0] == 0.0f || food.waterUsage[0] == 0.0f)
+                    holder.waterView.setText("No Water Data");
+                else
+                    holder.waterView.setText(f.format(1 - food.waterUsage[0] / currentFood.waterUsage[0]) + "% less water");
+            } else {
+                holder.carbonView.setText(f.format(1 - food.carbonUsage[1] / currentFood.carbonUsage[1]) + "% less Carbon");
+                if (currentFood.waterUsage[1] == 0.0f || food.waterUsage[1] == 0.0f)
+                    holder.carbonView.setText("No Water Data");
+                else
+                    holder.waterView.setText(f.format(1 - food.waterUsage[1] / currentFood.waterUsage[1]) + "% less water");
+            }
         }
-
     }
 
     // total number of rows

@@ -125,9 +125,18 @@ public class MainActivity extends AppCompatActivity {
                         currentUnit = unitsMap.get("mL");
                     setLabels(carbonLabel, waterLabel, amt);
 
-                    //TODO: POPULATE RECOMMENDED FOODS
-                    /*RecommenedFoodsViewAdapter adapter = new RecommenedFoodsViewAdapter(this, foodsArray, namesArray, currentFood);
-                    recFoodsList.setAdapter(adapter);*/
+                    ArrayList<Food> foodsArray = new ArrayList<>();
+
+                    if(currentFood.similarFoods.isEmpty()) {
+                        foodsArray.add(currentFood);
+                    }
+
+                    for(int index = 0; index < currentFood.similarFoods.size(); index++) {
+                        foodsArray.add(foodsMap.get(currentFood.similarFoods.get(index)));
+                    }
+
+                    RecommdenedFoodsViewAdapter adapter = new RecommdenedFoodsViewAdapter(view.getContext(), foodsArray, currentFood.similarFoods, currentFood);
+                    recFoodsList.setAdapter(adapter);
                 }
             }
 

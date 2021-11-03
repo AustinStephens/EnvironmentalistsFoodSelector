@@ -139,8 +139,7 @@ public class MainActivity extends AppCompatActivity {
                     /*RecommenedFoodsViewAdapter adapter = new RecommenedFoodsViewAdapter(this, foodsArray, namesArray, currentFood);
                     recFoodsList.setAdapter(adapter);*/
 
-                    if(currentFood!= null && currentFood.similarFoods!= null && currentFood.similarFoods.size() > 0) {
-                        System.out.println(currentFood.similarFoods);
+                    if(currentFood!= null) {
                         initRecycler();
                     }
                 }
@@ -271,10 +270,11 @@ public class MainActivity extends AppCompatActivity {
             rvadapter = new MyRecyclerViewAdapter(this,currentFood.similarFoods);
         }
         else{
-            rvadapter = new MyRecyclerViewAdapter(this,new ArrayList<String>());
+            ArrayList<String> test = new ArrayList(Arrays.asList("Excellent Selection!"));
+            rvadapter = new MyRecyclerViewAdapter(this,test);
         }
-
         rv.setAdapter(rvadapter);
+
     }
 
     public static class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {

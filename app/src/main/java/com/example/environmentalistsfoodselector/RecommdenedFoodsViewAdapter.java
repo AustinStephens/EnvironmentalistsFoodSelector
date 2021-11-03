@@ -35,13 +35,16 @@ public class RecommdenedFoodsViewAdapter extends RecyclerView.Adapter<Recommdene
     // binds the data to the TextView in each row
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+
         Food food = data.get(position);
+        // if we passed in the current food object, meaning the list is empty
         if(currentFood.equals(data.get(position))) {
-            holder.nameView.setText("        Excellent Selection! No Better Foods Found!");
+            holder.nameView.setText("        Excellent Selection! No Better Foods Found!"); // looks weird without spaces, but may need to keep the same because this doesn't adjust to different screen sizes
         } else {
             String name = names.get(position);
             holder.nameView.setText(name);
             DecimalFormat f = new DecimalFormat("#.###");
+            // makes sure they line up with units
             if (currentFood.weight && food.weight) {
                 holder.carbonView.setText(f.format(1 - food.carbonUsage[0] / currentFood.carbonUsage[0]) + "% less Carbon");
                 if (currentFood.waterUsage[0] == 0.0f || food.waterUsage[0] == 0.0f)

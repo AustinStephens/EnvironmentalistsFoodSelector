@@ -52,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
         Spinner units = (Spinner) findViewById(R.id.units); // Units Dropdown
         Button addItems = (Button) findViewById(R.id.addItem); // Add item Button
         Button itemsPage = (Button) findViewById(R.id.itemsPage); // Go to Added Items Page
+        Button bestFoods = (Button) findViewById(R.id.bestButton); // Best Foods Button
+        Button worstFoods = (Button) findViewById(R.id.worstButton); // Worst Foods Button
         RecyclerView recFoodsList = (RecyclerView) findViewById(R.id.similarFoods); // Suggested Foods List
         recFoodsList.setLayoutManager(new LinearLayoutManager(this));
 
@@ -194,6 +196,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ItemsListActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        bestFoods.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, BestFoodsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        worstFoods.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, WorstFoodsActivity.class);
                 startActivity(intent);
             }
         });

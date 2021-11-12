@@ -15,7 +15,7 @@
             android:layout_width="260dp"
             android:layout_height="50dp"
             android:layout_marginStart="76dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="80dp"
             android:layout_marginEnd="75dp"
             android:backgroundTint="@color/PrimaryBackground"
             android:textAlignment="center"
@@ -28,10 +28,11 @@
             android:layout_width="260dp"
             android:layout_height="50dp"
             android:layout_marginStart="76dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="75dp"
             android:backgroundTint="@color/PrimaryBackground"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Categories" />
 
@@ -40,7 +41,7 @@
             android:layout_width="138dp"
             android:layout_height="35dp"
             android:layout_marginStart="136dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:text="Select Food"
             android:textAlignment="center"
             android:textSize="20sp"
@@ -132,7 +133,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/addItem"
             android:layout_width="165dp"
             android:layout_height="70dp"
             android:layout_marginStart="16dp"
@@ -142,7 +143,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/itemsPage"
             android:layout_width="165dp"
             android:layout_height="70dp"
             android:layout_marginEnd="16dp"
@@ -162,6 +163,26 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/units" />
+
+        <Button
+            android:id="@+id/bestButton"
+            android:layout_width="160dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Best Foods"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/worstButton"
+            android:layout_width="160dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Worst Foods"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

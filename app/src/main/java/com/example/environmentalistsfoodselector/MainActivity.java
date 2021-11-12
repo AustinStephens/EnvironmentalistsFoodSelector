@@ -1,5 +1,12 @@
 package com.example.environmentalistsfoodselector;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
+import android.content.res.Resources;
+
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -7,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -34,7 +42,9 @@ public class MainActivity extends AppCompatActivity {
     public HashMap<String, Unit> unitsMap;
 
     public Food currentFood;
-    public Unit currentUnit;
+    public String currentUnit;
+    public float currentAmount;
+    public String currentName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,24 +56,35 @@ public class MainActivity extends AppCompatActivity {
         unitsMap = currentUnitsMap.getUnitsMap();
 
         //Widget Vars
-        TextView foodLabel = findViewById(R.id.foodLabel); // Name of Selected Food Label
-        TextView carbonLabel = findViewById(R.id.carbon); // carbon usage label
-        TextView waterLabel = findViewById(R.id.water); // water usage label
-        TextInputEditText amount = findViewById(R.id.amount); // Amount input textbox
-        Spinner units = findViewById(R.id.units); // Units Dropdown
-        RecyclerView recFoodsList = findViewById(R.id.similarFoods);
+
+        TextView foodLabel = (TextView) findViewById(R.id.foodLabel); // Name of Selected Food Label
+        TextView carbonLabel = (TextView) findViewById(R.id.carbon); // carbon usage label
+        TextView waterLabel = (TextView) findViewById(R.id.water); // water usage label
+        TextInputEditText amount = (TextInputEditText) findViewById(R.id.amount); // Amount input textbox
+        Spinner units = (Spinner) findViewById(R.id.units); // Units Dropdown
+        Button addItems = (Button) findViewById(R.id.addItem); // Add item Button
+        Button itemsPage = (Button) findViewById(R.id.itemsPage); // Go to Added Items Page
+        Button bestFoods = (Button) findViewById(R.id.bestButton); // Best Foods Button
+        Button worstFoods = (Button) findViewById(R.id.worstButton); // Worst Foods Button
+        RecyclerView recFoodsList = (RecyclerView) findViewById(R.id.similarFoods); // Suggested Foods List
         recFoodsList.setLayoutManager(new LinearLayoutManager(this));
 
         //Listeners
-        amount.setOnKeyListener( (view, key, event) -> {
-            if(event.getAction() != KeyEvent.ACTION_DOWN) {
-                view.onKeyDown(key, event); // call regular onKeyDown
-                if(Objects.requireNonNull( amount.getText() ).length() != 0 && currentUnit != null) { // if food is selected and amount isn't empty
-                    String amtStr = amount.getText().toString();
-                    float amt = Float.parseFloat(amtStr);
-                    setLabels(carbonLabel, waterLabel, amt);
-                } else if (currentUnit != null){ // for when someone might clear the textbox
-                    setLabels(carbonLabel,waterLabel,0);
+        amount.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int key, KeyEvent event) {
+                if(event.getAction() != KeyEvent.ACTION_DOWN) {
+                    view.onKeyDown(key, event); // call regular onKeyDown
+                    if(amount.getText().length() != 0 && currentUnit != null) { // if food is selected and amount isnt empty
+                        String amtStr = amount.getText().toString();
+                        float amt = Float.parseFloat(amtStr);
+                        setLabels(carbonLabel, waterLabel, amt);
+                        currentAmount = amt;
+                    } else if (currentUnit != null){ // for when someone might clear the textbox
+                        setLabels(carbonLabel,waterLabel,0);
+                        currentAmount = 0;
+                    }
+
                 }
             }
             return true;
@@ -73,8 +94,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String selectItemText = (String) adapterView.getItemAtPosition(i); // gets unit name
-                currentUnit = unitsMap.get(selectItemText); // gets Unit object from unitsMap
-                if(Objects.requireNonNull( amount.getText() ).length() != 0) { // if food is selected and amount isn't empty
+                currentUnit = selectItemText; // gets Unit object from unitsMap
+                if(amount.getText().length() != 0) { // if food is selected and amount isnt empty
                     String amtStr = amount.getText().toString();
                     float amt = Float.parseFloat(amtStr);
                     setLabels(carbonLabel, waterLabel, amt);
@@ -99,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) { // i is the position in the array
                 if(i > 0) { // first position is invalid
                     String selectItemText = (String) adapterView.getItemAtPosition(i);
+                    currentName = selectItemText;
                     currentFood = foodsMap.get(selectItemText);
                     foodLabel.setText(selectItemText);
 
@@ -122,9 +144,9 @@ public class MainActivity extends AppCompatActivity {
 
                     // sets starting unit
                     if(currentFood.weight)
-                        currentUnit = unitsMap.get("g");
+                        currentUnit = "g";
                     else
-                        currentUnit = unitsMap.get("mL");
+                        currentUnit = "mL";
                     setLabels(carbonLabel, waterLabel, amt);
 
                     //Array of food objects for similar foods
@@ -175,7 +197,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        addItems.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Adds Food, Unit, and Amount to our singleton arraylist class
+                ItemsAdded.getInstance().addItem(new AddedItem(currentName, currentFood, currentUnit, currentAmount));
+            }
+        });
 
+        itemsPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ItemsListActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        bestFoods.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, BestFoodsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        worstFoods.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, WorstFoodsActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
@@ -218,18 +270,19 @@ public class MainActivity extends AppCompatActivity {
         DecimalFormat f = new DecimalFormat("#.###"); // rounds to 3 digits
 
         // if the unit selected is a unit of volume, use 0 indices
-        if(currentUnit.weight) {
-            carbonLabel.setText(f.format(currentFood.carbonUsage[0] * amt * currentUnit.scale));
+        Unit unit = unitsMap.get(currentUnit);
+        if(unit.weight) {
+            carbonLabel.setText(f.format(currentFood.carbonUsage[0] * amt * unit.scale));
             if(currentFood.waterUsage[0] == 0.0f)
                 waterLabel.setText("N/A");
             else
-                waterLabel.setText(f.format(currentFood.waterUsage[0] * amt * currentUnit.scale));
+                waterLabel.setText(f.format(currentFood.waterUsage[0] * amt * unit.scale));
         } else { // if the unit selected is a unit of volume, use 1 indices
-            carbonLabel.setText(f.format(currentFood.carbonUsage[1] * amt * currentUnit.scale));
+            carbonLabel.setText(f.format(currentFood.carbonUsage[1] * amt * unit.scale));
             if(currentFood.waterUsage[1] == 0.0f)
                 waterLabel.setText("N/A");
             else
-                waterLabel.setText(f.format(currentFood.waterUsage[1] * amt * currentUnit.scale));
+                waterLabel.setText(f.format(currentFood.waterUsage[1] * amt * unit.scale));
         }
     }
 

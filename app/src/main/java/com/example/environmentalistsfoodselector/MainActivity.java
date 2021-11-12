@@ -5,7 +5,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.content.res.Resources;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -84,11 +83,11 @@ public class MainActivity extends AppCompatActivity {
                         setLabels(carbonLabel,waterLabel,0);
                         currentAmount = 0;
                     }
-
                 }
+                return true;
             }
-            return true;
-        } );
+        });
+
 
         units.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

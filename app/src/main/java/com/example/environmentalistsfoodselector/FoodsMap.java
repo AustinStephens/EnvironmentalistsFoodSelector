@@ -10,14 +10,14 @@ public class FoodsMap {
     // food hashmap variable
     private HashMap<String, Food> foodsMap;
 
-   /*static FoodsMap instance;
+   private static FoodsMap instance;
 
-    static FoodsMap getInstance(){
+    public static FoodsMap getInstance(){
         if (instance== null)
             instance = new FoodsMap();
         return instance;
     }
-*/
+
     // constructor
     public FoodsMap(){
         foodsMap = new HashMap<String, Food>();

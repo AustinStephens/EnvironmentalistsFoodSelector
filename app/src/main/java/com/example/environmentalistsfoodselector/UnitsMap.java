@@ -5,15 +5,14 @@ import java.util.HashMap;
 public class UnitsMap {
     private final HashMap<String, Unit> unitsMap;
 
-    /*
-      static UnitMap instance;
+      private static UnitsMap instance;
 
-      static UnitMap getInstance(){
+      public static UnitsMap getInstance(){
           if (instance== null)
-              instance = new UnitMap();
+              instance = new UnitsMap();
           return instance;
       }
-  */
+
     public UnitsMap() {
         unitsMap = new HashMap<String, Unit>();
         // scale for weight units are relative to gram, scale for volume units are relative to mL

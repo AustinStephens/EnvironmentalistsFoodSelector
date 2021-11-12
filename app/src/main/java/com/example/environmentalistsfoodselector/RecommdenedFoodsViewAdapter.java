@@ -40,23 +40,24 @@ public class RecommdenedFoodsViewAdapter extends RecyclerView.Adapter<Recommdene
         // if we passed in the current food object, meaning the list is empty
         if(currentFood.equals(data.get(position))) {
             holder.nameView.setText("        Excellent Selection! No Better Foods Found!"); // looks weird without spaces, but may need to keep the same because this doesn't adjust to different screen sizes
-        } else {
+        }
+        else {
             String name = names.get(position);
             holder.nameView.setText(name);
             DecimalFormat f = new DecimalFormat("#.###");
             // makes sure they line up with units
             if (currentFood.weight && food.weight) {
-                holder.carbonView.setText(f.format(1 - food.carbonUsage[0] / currentFood.carbonUsage[0]) + "% less Carbon");
+                holder.carbonView.setText(f.format( food.carbonUsage[0] / currentFood.carbonUsage[0]*100) + "% less Carbon");
                 if (currentFood.waterUsage[0] == 0.0f || food.waterUsage[0] == 0.0f)
                     holder.waterView.setText("No Water Data");
                 else
-                    holder.waterView.setText(f.format(1 - food.waterUsage[0] / currentFood.waterUsage[0]) + "% less water");
+                    holder.waterView.setText(f.format(food.waterUsage[0] / currentFood.waterUsage[0]* 100) + "% less water");
             } else {
-                holder.carbonView.setText(f.format(1 - food.carbonUsage[1] / currentFood.carbonUsage[1]) + "% less Carbon");
+                holder.carbonView.setText(f.format(food.carbonUsage[1] / currentFood.carbonUsage[1]*100) + "% less Carbon");
                 if (currentFood.waterUsage[1] == 0.0f || food.waterUsage[1] == 0.0f)
                     holder.carbonView.setText("No Water Data");
                 else
-                    holder.waterView.setText(f.format(1 - food.waterUsage[1] / currentFood.waterUsage[1]) + "% less water");
+                    holder.waterView.setText(f.format( food.waterUsage[1] / currentFood.waterUsage[1]*100) + "% less water");
             }
         }
     }

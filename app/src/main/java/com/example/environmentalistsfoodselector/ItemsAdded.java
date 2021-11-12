@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class ItemsAdded {
 
     //Singleton implementation
-    static ItemsAdded instance; // Holds a static reference to an object
+    private static ItemsAdded instance; // Holds a static reference to an object
 
-    static ItemsAdded getInstance() { // Call this to get the object
+    public static ItemsAdded getInstance() { // Call this to get the object
         if(instance == null) {
             instance = new ItemsAdded();
         }

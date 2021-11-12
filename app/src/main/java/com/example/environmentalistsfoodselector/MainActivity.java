@@ -35,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
             R.array.NutsFoods, R.array.OilsFoods, R.array.ProcessedFoods, R.array.JamsFoods, R.array.SaucesFoods, R.array.SeafoodFoods, R.array.SweetsFoods, R.array.VegetableFoods};
 
     // create food and unit map object, then get the maps for later use
-    public FoodsMap currentFoodsMap = new FoodsMap();
+    public static FoodsMap currentFoodsMap = FoodsMap.getInstance();
     public HashMap<String, Food> foodsMap;
-    public UnitsMap currentUnitsMap = new UnitsMap();
+    public static UnitsMap currentUnitsMap = UnitsMap.getInstance();
     public HashMap<String, Unit> unitsMap;
 
     public Food currentFood;

@@ -18,6 +18,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ItemsListActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".BestFoodsActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".WorstFoodsActivity"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>

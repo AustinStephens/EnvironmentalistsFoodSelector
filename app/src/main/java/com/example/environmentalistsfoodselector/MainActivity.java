@@ -196,6 +196,7 @@ public class MainActivity extends AppCompatActivity {
                     recFoodsList.setAdapter(adapter);
                     carbonLabel.setText("0");
                     waterLabel.setText("0");
+                    foodLabel.setText("Select Food");
                 }
             }
 

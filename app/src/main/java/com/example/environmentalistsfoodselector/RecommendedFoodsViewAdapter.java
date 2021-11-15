@@ -44,11 +44,11 @@ public class RecommendedFoodsViewAdapter extends RecyclerView.Adapter<Recommende
         lp.setMargins(70, 40, 0, 0);
 
         // if we passed in the current food object, meaning the list is empty
-        if(currentFood.equals(data.get(position))) {
+        if(currentFood.equals(food)) {
             lp.setMargins((width / 2) - 400, 40, 0, 0);
             holder.nameView.setText("Excellent Selection! No Better Foods Found!"); // looks weird without spaces, but may need to keep the same because this doesn't adjust to different screen sizes
         }
-        else {
+        else if(food != null){
             String name = names.get(position);
             holder.nameView.setText(name);
 

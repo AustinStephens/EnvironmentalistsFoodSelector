@@ -20,6 +20,8 @@ public class ItemsListActivity extends AppCompatActivity {
     TextView carbonTotal;
     TextView waterTotal;
     RecyclerView itemsList;
+    RecyclerView.AdapterDataObserver observer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +31,17 @@ public class ItemsListActivity extends AppCompatActivity {
         clearItems = (Button) findViewById(R.id.clearButton); // Clear Button
         carbonTotal = (TextView) findViewById(R.id.carbonTotal); // Carbon Total Label
         waterTotal = (TextView) findViewById(R.id.waterTotal); // Water Total Label
-
-        ArrayList<AddedItem> items = ItemsAdded.getInstance().getItems();
         // Need to add recycler View Logic
         itemsList = (RecyclerView) findViewById(R.id.itemsList); // List
         itemsList.setLayoutManager(new LinearLayoutManager(this));
-        resetPage(items);
+        observer = new RecyclerView.AdapterDataObserver() {
+            @Override
+            public void onChanged() {
+                super.onChanged();
+                resetPage(ItemsAdded.getInstance().getItems());
+            }
+        };
+        resetPage(ItemsAdded.getInstance().getItems());
 
         clearItems.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +60,7 @@ public class ItemsListActivity extends AppCompatActivity {
             totalWater += i.getWater();
         }
         AddedItemsViewAdapter adapter = new AddedItemsViewAdapter(this, items, totalCarbon, totalWater);
+        adapter.registerAdapterDataObserver(observer);
         itemsList.setAdapter(adapter);
 
         DecimalFormat f = new DecimalFormat("#.##");

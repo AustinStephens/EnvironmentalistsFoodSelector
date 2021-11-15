@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     public Food currentFood;
     public String currentUnit;
-    public float currentAmount;
+    public float currentAmount = 0.0f;
     public String currentName;
 
     @Override
@@ -98,10 +98,11 @@ public class MainActivity extends AppCompatActivity {
                 currentUnit = selectItemText; // gets Unit object from unitsMap
                 if(amount.getText().length() != 0) { // if food is selected and amount isnt empty
                     String amtStr = amount.getText().toString();
-                    float amt = Float.parseFloat(amtStr);
-                    setLabels(carbonLabel, waterLabel, amt);
+                    currentAmount = Float.parseFloat(amtStr);
+                    setLabels(carbonLabel, waterLabel, currentAmount);
                 } else if (currentUnit != null){ // for when someone might clear the textbox
                     setLabels(carbonLabel,waterLabel,0);
+                    currentAmount = 0.0f;
                 }
             }
 
@@ -126,11 +127,11 @@ public class MainActivity extends AppCompatActivity {
                     foodLabel.setText(selectItemText);
 
                     // If someone puts a number in before selecting a food
-                    float amt = 1.0f;
+                    currentAmount = 1.0f;
                     if(Objects.requireNonNull( amount.getText() ).length() == 0)
                         amount.setText("1");
                     else
-                        amt = Float.parseFloat(amount.getText().toString());
+                        currentAmount = Float.parseFloat(amount.getText().toString());
 
 
                     // gets proper string array of units based on food's unit types
@@ -148,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
                         currentUnit = "g";
                     else
                         currentUnit = "mL";
-                    setLabels(carbonLabel, waterLabel, amt);
+                    setLabels(carbonLabel, waterLabel, currentAmount);
 
                     //Array of food objects for similar foods
                     ArrayList<Food> foodsArray = new ArrayList<>();
@@ -186,9 +187,15 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) { // i is the position in the array
                 if(i > 0) { // first position is invalid
                     // selects the string array resource to populate the foods dropdown with
+                    currentFood = null;
+                    currentName = null;
                     ArrayAdapter<String> foodAdapter = createAdapter(foodsArrays[i-1]);
                     foodAdapter.setDropDownViewResource(R.layout.spinner_item);
                     foods.setAdapter(foodAdapter);
+                    RecommendedFoodsViewAdapter adapter = new RecommendedFoodsViewAdapter(view.getContext(), new ArrayList<Food>(), new ArrayList<String>(), currentFood);
+                    recFoodsList.setAdapter(adapter);
+                    carbonLabel.setText("0");
+                    waterLabel.setText("0");
                 }
             }
 
@@ -202,7 +209,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Adds Food, Unit, and Amount to our singleton arraylist class
-                ItemsAdded.getInstance().addItem(new AddedItem(currentName, currentFood, currentUnit, currentAmount));
+                if(currentName != null && currentUnit  != null && currentAmount != 0.0f)
+                    ItemsAdded.getInstance().addItem(new AddedItem(currentName, currentFood, currentUnit, currentAmount));
             }
         });
 

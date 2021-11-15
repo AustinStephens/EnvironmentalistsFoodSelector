@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/nameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="12.5dp"
+        android:textColor="@color/SecondaryText"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/amountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="12.5dp"
+        android:textColor="@color/SecondaryText"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:text="Carbon Footprint"
+        android:textColor="@color/SecondaryText"
+        android:textSize="11.5dp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="75dp"
+        android:text="Water Footprint"
+        android:textColor="@color/SecondaryText"
+        android:textSize="11.5dp" />
+
+    <TextView
+        android:id="@+id/carbonText"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="175dp"
+        android:layout_marginTop="50dp"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/SecondaryText"
+        android:textSize="11.5dp" />
+
+    <TextView
+        android:id="@+id/waterText"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="175dp"
+        android:layout_marginTop="75dp"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/SecondaryText"
+        android:textSize="11.5dp" />
+</FrameLayout>

@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="@color/SecondaryBackground">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -39,6 +40,7 @@
             android:layout_marginTop="16dp"
             android:text="Select Food"
             android:textAlignment="center"
+            android:textColor="@color/SecondaryText"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,6 +54,8 @@
             android:layout_marginTop="20dp"
             android:hint="Amount"
             android:inputType="numberDecimal"
+            android:textAlignment="center"
+            android:textColor="@color/SecondaryText"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -61,6 +65,7 @@
             android:layout_height="30dp"
             android:layout_marginStart="40dp"
             android:text="Carbon Emissions"
+            android:textColor="@color/SecondaryText"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/foodLabel" />
 
@@ -70,6 +75,7 @@
             android:layout_height="30dp"
             android:layout_marginStart="40dp"
             android:text="Water Used"
+            android:textColor="@color/SecondaryText"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -79,6 +85,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="28dp"
             android:layout_marginTop="20dp"
+            android:backgroundTint="@color/PrimaryBackground"
             app:layout_constraintStart_toEndOf="@+id/amount"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -89,6 +96,7 @@
             android:layout_marginEnd="100dp"
             android:text="0"
             android:textAlignment="viewEnd"
+            android:textColor="@color/SecondaryText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/foodLabel" />
 
@@ -99,6 +107,7 @@
             android:layout_marginEnd="100dp"
             android:text="0"
             android:textAlignment="viewEnd"
+            android:textColor="@color/SecondaryText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/carbon" />
 
@@ -108,6 +117,7 @@
             android:layout_height="30dp"
             android:layout_marginStart="10dp"
             android:text="gCO\u2082e"
+            android:textColor="@color/SecondaryText"
             app:layout_constraintStart_toEndOf="@+id/carbon"
             app:layout_constraintTop_toBottomOf="@+id/foodLabel" />
 
@@ -117,6 +127,7 @@
             android:layout_height="30dp"
             android:layout_marginStart="10dp"
             android:text="Gallons"
+            android:textColor="@color/SecondaryText"
             app:layout_constraintStart_toEndOf="@+id/water"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -155,6 +166,7 @@
             android:layout_marginTop="16dp"
             android:text="Recommended Foods"
             android:textAlignment="center"
+            android:textColor="@color/SecondaryText"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

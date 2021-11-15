@@ -51,23 +51,31 @@ public class RecommendedFoodsViewAdapter extends RecyclerView.Adapter<Recommende
         else {
             String name = names.get(position);
             holder.nameView.setText(name);
-            DecimalFormat f = new DecimalFormat("#.##");
+
             // makes sure they line up with units
             if (currentFood.weight && food.weight) {
-                holder.carbonView.setText(f.format( food.carbonUsage[0] / currentFood.carbonUsage[0]*100) + "% less Carbon");
-                if (currentFood.waterUsage[0] == 0.0f || food.waterUsage[0] == 0.0f)
-                    holder.waterView.setText("No Water Data");
-                else
-                    holder.waterView.setText(f.format(food.waterUsage[0] / currentFood.waterUsage[0]* 100) + "% less water");
+                labelSetter(holder,0, food);
             } else {
-                holder.carbonView.setText(f.format(food.carbonUsage[1] / currentFood.carbonUsage[1]*100) + "% less Carbon");
-                if (currentFood.waterUsage[1] == 0.0f || food.waterUsage[1] == 0.0f)
-                    holder.carbonView.setText("No Water Data");
-                else
-                    holder.waterView.setText(f.format( food.waterUsage[1] / currentFood.waterUsage[1]*100) + "% less water");
+                labelSetter(holder, 1, food);
             }
         }
         holder.nameView.setLayoutParams(lp);
+    }
+
+    private void labelSetter(ViewHolder holder, int index, Food food) {
+        DecimalFormat f = new DecimalFormat("#.##");
+        holder.carbonView.setText(f.format((1 - food.carbonUsage[index] / currentFood.carbonUsage[index]) * 100f) + "% less Carbon");
+        if (currentFood.waterUsage[index] == 0.0f || food.waterUsage[index] == 0.0f)
+            holder.waterView.setText("No Water Data");
+        else {
+            float percent = (1 - food.waterUsage[index] / currentFood.waterUsage[index]) * 100f;
+            String str = "less";
+            if(percent < 0) {
+                str = "more";
+                percent *= -1;
+            }
+            holder.waterView.setText(f.format(percent) + "% " + str + " water");
+        }
     }
 
     // total number of rows

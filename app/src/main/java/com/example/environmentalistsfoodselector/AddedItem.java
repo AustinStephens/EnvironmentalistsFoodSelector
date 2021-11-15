@@ -1,5 +1,7 @@
 package com.example.environmentalistsfoodselector;
 
+import java.text.DecimalFormat;
+
 /*
     Class to contain all Food selection information
 */
@@ -15,7 +17,7 @@ public class AddedItem {
         name = n;
         food = f;
         unitName = u;
-        //unit == UnitsMap.getInstance().get(unitName);
+        unit = UnitsMap.getInstance().getUnitsMap().get(unitName);
         amount = amt;
     }
 
@@ -55,17 +57,27 @@ public class AddedItem {
         return water;
     }
 
-    public String getCarbonText() {
-        return Float.toString(getCarbon());
+    public String getCarbonText(float total) {
+        DecimalFormat f = new DecimalFormat("#.##");
+        float c = getCarbon();
+        return f.format(c) + " gCO\u2082e  (" + f.format(c/total * 100f) + "%)";
     }
 
-    public String getWaterText() {
+    public String getWaterText(float total) {
         String water;
+        DecimalFormat f = new DecimalFormat("#.##");
+        float w = getWater();
         if((unit.weight && food.waterUsage[0] == 0.0f) || (!unit.weight && food.waterUsage[1] == 0.0f))
-            water = "N/A";
+            water = "N/A (0%)";
         else
-            water = Float.toString(getWater());
+            water = f.format(w) + " Gallons  (" + f.format(w/total * 100f) + "%)";
 
         return water;
+    }
+
+    public String getAmountText() {
+        String ret = Float.toString(amount);
+        ret = ret + " " + getUnitName();
+        return ret;
     }
 }

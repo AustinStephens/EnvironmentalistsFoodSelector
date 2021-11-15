@@ -1,24 +1,62 @@
 package com.example.environmentalistsfoodselector;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.w3c.dom.Text;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+
 public class ItemsListActivity extends AppCompatActivity {
+
+    Button clearItems;
+    TextView carbonTotal;
+    TextView waterTotal;
+    RecyclerView itemsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_itemslist);
 
-        RecyclerView itemsList = (RecyclerView) findViewById(R.id.itemsList); // List
-        Button clearItems = (Button) findViewById(R.id.clearButton); // Clear Button
-        TextView carbonTotal = (TextView) findViewById(R.id.carbonTotal); // Carbon Total Label
-        TextView waterTotal = (TextView) findViewById(R.id.waterTotal); // Water Total Label
+        clearItems = (Button) findViewById(R.id.clearButton); // Clear Button
+        carbonTotal = (TextView) findViewById(R.id.carbonTotal); // Carbon Total Label
+        waterTotal = (TextView) findViewById(R.id.waterTotal); // Water Total Label
 
+        ArrayList<AddedItem> items = ItemsAdded.getInstance().getItems();
         // Need to add recycler View Logic
+        itemsList = (RecyclerView) findViewById(R.id.itemsList); // List
+        itemsList.setLayoutManager(new LinearLayoutManager(this));
+        resetPage(items);
+
+        clearItems.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Adds Food, Unit, and Amount to our singleton arraylist class
+                ItemsAdded.getInstance().clearItems();
+                resetPage(ItemsAdded.getInstance().getItems());
+            }
+        });
+    }
+
+    public void resetPage(ArrayList<AddedItem> items) {
+        float totalCarbon = 0.0f, totalWater = 0.0f;
+        for(AddedItem i : items) {
+            totalCarbon += i.getCarbon();
+            totalWater += i.getWater();
+        }
+        AddedItemsViewAdapter adapter = new AddedItemsViewAdapter(this, items, totalCarbon, totalWater);
+        itemsList.setAdapter(adapter);
+
+        DecimalFormat f = new DecimalFormat("#.##");
+        carbonTotal.setText("Total Carbon Footprint:\n" + f.format(totalCarbon) + " gCO\u2082e");
+        waterTotal.setText("Total Water Footprint:\n" + f.format(totalWater) + " Gallons");
     }
 }

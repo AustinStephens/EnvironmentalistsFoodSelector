@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -18,9 +19,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -35,9 +33,7 @@ public class MainActivity extends AppCompatActivity {
             R.array.NutsFoods, R.array.OilsFoods, R.array.ProcessedFoods, R.array.JamsFoods, R.array.SaucesFoods, R.array.SeafoodFoods, R.array.SweetsFoods, R.array.VegetableFoods};
 
     // create food and unit map object, then get the maps for later use
-    public static FoodsMap currentFoodsMap = FoodsMap.getInstance();
     public HashMap<String, Food> foodsMap;
-    public static UnitsMap currentUnitsMap = UnitsMap.getInstance();
     public HashMap<String, Unit> unitsMap;
 
     public Food currentFood;
@@ -48,11 +44,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //get screen width
+        int screenWidth = Resources.getSystem().getDisplayMetrics().widthPixels;
         setContentView(R.layout.activity_main);
 
         // create food and unit maps
-        foodsMap = currentFoodsMap.getFoodMap();
-        unitsMap = currentUnitsMap.getUnitsMap();
+        foodsMap = FoodsMap.getInstance().getFoodMap();
+        unitsMap = UnitsMap.getInstance().getUnitsMap();
 
         //Widget Vars
 
@@ -67,6 +65,10 @@ public class MainActivity extends AppCompatActivity {
         Button worstFoods = (Button) findViewById(R.id.worstButton); // Worst Foods Button
         RecyclerView recFoodsList = (RecyclerView) findViewById(R.id.similarFoods); // Suggested Foods List
         recFoodsList.setLayoutManager(new LinearLayoutManager(this));
+
+        //set width
+        bestFoods.setWidth(screenWidth/2);
+        worstFoods.setWidth(screenWidth/2);
 
         //Listeners
         amount.setOnKeyListener(new View.OnKeyListener() {
@@ -110,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //Foods Dropdown
-        Spinner foods = findViewById(R.id.Foods);
+        Spinner foods = (Spinner) findViewById(R.id.Foods);
         ArrayAdapter<String> foodAdapter = createAdapter(R.array.AllFoods); // starts off as every food item until category is selected
         foodAdapter.setDropDownViewResource(R.layout.spinner_item);
         foods.setAdapter(foodAdapter);
@@ -163,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     // set the new lists to the recycler view
-                    RecommdenedFoodsViewAdapter adapter = new RecommdenedFoodsViewAdapter(view.getContext(), foodsArray, currentFood.similarFoods, currentFood);
+                    RecommendedFoodsViewAdapter adapter = new RecommendedFoodsViewAdapter(view.getContext(), foodsArray, currentFood.similarFoods, currentFood);
                     recFoodsList.setAdapter(adapter);
                 }
             }
@@ -175,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //Categories dropdown
-        Spinner categories = findViewById(R.id.Categories);
+        Spinner categories = (Spinner) findViewById(R.id.Categories);
         ArrayAdapter<String> catAdapter = createAdapter(R.array.categories);
         catAdapter.setDropDownViewResource(R.layout.spinner_item);
         categories.setAdapter(catAdapter);

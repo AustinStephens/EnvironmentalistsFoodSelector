@@ -14,9 +14,7 @@
             android:id="@+id/Categories"
             android:layout_width="260dp"
             android:layout_height="50dp"
-            android:layout_marginStart="76dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginEnd="75dp"
+            android:layout_marginTop="20dp"
             android:backgroundTint="@color/PrimaryBackground"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
@@ -27,12 +25,10 @@
             android:id="@+id/Foods"
             android:layout_width="260dp"
             android:layout_height="50dp"
-            android:layout_marginStart="76dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="75dp"
             android:backgroundTint="@color/PrimaryBackground"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Categories" />
 
@@ -40,11 +36,11 @@
             android:id="@+id/foodLabel"
             android:layout_width="138dp"
             android:layout_height="35dp"
-            android:layout_marginStart="136dp"
             android:layout_marginTop="16dp"
             android:text="Select Food"
             android:textAlignment="center"
             android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Foods" />
 
@@ -90,7 +86,7 @@
             android:id="@+id/carbon"
             android:layout_width="100dp"
             android:layout_height="30dp"
-            android:layout_marginEnd="124dp"
+            android:layout_marginEnd="100dp"
             android:text="0"
             android:textAlignment="viewEnd"
             app:layout_constraintEnd_toEndOf="parent"
@@ -100,7 +96,7 @@
             android:id="@+id/water"
             android:layout_width="100dp"
             android:layout_height="30dp"
-            android:layout_marginEnd="124dp"
+            android:layout_marginEnd="100dp"
             android:text="0"
             android:textAlignment="viewEnd"
             app:layout_constraintEnd_toEndOf="parent"
@@ -110,7 +106,7 @@
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="10dp"
             android:text="gCO\u2082e"
             app:layout_constraintStart_toEndOf="@+id/carbon"
             app:layout_constraintTop_toBottomOf="@+id/foodLabel" />
@@ -119,7 +115,7 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="10dp"
             android:text="Gallons"
             app:layout_constraintStart_toEndOf="@+id/water"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -127,7 +123,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/similarFoods"
             android:layout_width="0dp"
-            android:layout_height="210dp"
+            android:layout_height="100dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView9" />
@@ -137,20 +133,20 @@
             android:layout_width="165dp"
             android:layout_height="70dp"
             android:layout_marginStart="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="24dp"
             android:text="Add Item"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/similarFoods" />
 
         <Button
             android:id="@+id/itemsPage"
             android:layout_width="165dp"
             android:layout_height="70dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
             android:text="All Added Items"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/similarFoods" />
 
         <TextView
             android:id="@+id/textView9"
@@ -166,23 +162,22 @@
 
         <Button
             android:id="@+id/bestButton"
-            android:layout_width="160dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="16dp"
             android:text="Best Foods"
+            app:layout_constraintEnd_toStartOf="@+id/worstButton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/addItem" />
 
         <Button
             android:id="@+id/worstButton"
-            android:layout_width="160dp"
-            android:layout_height="55dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="16dp"
             android:text="Worst Foods"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/itemsPage" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

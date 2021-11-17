@@ -580,4 +580,76 @@
         <item>cup</item>
         <item>gallon</item>
     </string-array>
+
+    <string-array name="BakedBest">
+        <item>Bread</item>
+        <item>Naan Bread</item>
+    </string-array>
+
+    <string-array name="DairyBest">
+        <item>Milk - Almond</item>
+        <item>Yogurt</item>
+    </string-array>
+
+    <string-array name="DrinkBest">
+        <item>Beer</item>
+        <item>Black Tea</item>
+        <item>Bottled Water</item>
+    </string-array>
+
+    <string-array name="DryBest">
+        <item>Lentils</item>
+        <item>Vanilla</item>
+    </string-array>
+
+    <string-array name="FruitBest">
+        <item>Nectarine</item>
+        <item>Apricot</item>
+    </string-array>
+
+    <string-array name="MeatBest">
+        <item>Chicken</item>
+        <item>Tofu</item>
+    </string-array>
+
+    <string-array name="NutsBest">
+        <item>Peanuts</item>
+        <item>Sunflower Seeds</item>
+    </string-array>
+
+    <string-array name="OilsBest">
+        <item>Corn Oil</item>
+        <item>Soybean Oil</item>
+    </string-array>
+
+    <string-array name="ProcessedBest">
+        <item>Baked Beans</item>
+        <item>Custard</item>
+    </string-array>
+
+    <string-array name="JamsBest">
+        <item>Golden Syrup</item>
+        <item>Maple Syrup</item>
+    </string-array>
+
+    <string-array name="SaucesBest">
+        <item>Mustard</item>
+        <item>Stock - Vegetable</item>
+    </string-array>
+
+    <string-array name="SeafoodBest">
+        <item>Fish Sticks</item>
+        <item>Herring</item>
+    </string-array>
+
+    <string-array name="SweetsBest">
+        <item>Mints</item>
+        <item>Toffee</item>
+    </string-array>
+
+    <string-array name="VegetableBest">
+        <item>Artichoke</item>
+        <item>Garlic</item>
+    </string-array>
+
 </resources>

@@ -17,8 +17,8 @@ import java.util.Objects;
 
 public class BestFoodsActivity extends AppCompatActivity {
 
-    public int[] foodsArr = {R.array.BakedFoods, R.array.DairyFoods, R.array.DrinkFoods, R.array.DryFoods, R.array.FruitFoods, R.array.MeatFoods,
-            R.array.NutsFoods, R.array.OilsFoods, R.array.ProcessedFoods, R.array.JamsFoods, R.array.SaucesFoods, R.array.SeafoodFoods, R.array.SweetsFoods, R.array.VegetableFoods};
+    public int[] foodsArr = {R.array.BakedBest, R.array.DairyBest, R.array.DrinkBest, R.array.DryBest, R.array.FruitBest, R.array.MeatBest,
+            R.array.NutsBest, R.array.OilsBest, R.array.ProcessedBest, R.array.JamsBest, R.array.SaucesBest, R.array.SeafoodBest, R.array.SweetsBest, R.array.VegetableBest};
 
     ListView list;
 
@@ -28,8 +28,7 @@ public class BestFoodsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bestfoods);
 
         TextView foodLabel = (TextView) findViewById(R.id.foodLabel); // Name of Selected Food Label
-        TextView carbonLabel = (TextView) findViewById(R.id.carbon); // carbon usage label
-        TextView waterLabel = (TextView) findViewById(R.id.water);
+
 
         //Categories dropdown
         Spinner cat = (Spinner) findViewById(R.id.Categories);
@@ -39,12 +38,10 @@ public class BestFoodsActivity extends AppCompatActivity {
         cat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-             if(i > 0) { // first position is invalid
+             if(i >0) { // first position is invalid
                     // selects the string array resource to populate the foods dropdown with
                     ArrayAdapter<String> foodAdapter = createAdapter(foodsArr[i-1]);
                     foodAdapter.setDropDownViewResource(R.layout.spinner_item);
-                    carbonLabel.setText("0");
-                    waterLabel.setText("0");
                     foodLabel.setText("Select catagory");
 
                 }

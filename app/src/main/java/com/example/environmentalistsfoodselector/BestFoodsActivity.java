@@ -23,7 +23,7 @@ public class BestFoodsActivity extends AppCompatActivity {
 
     public Food currFood;
     public HashMap<String, Food> foodsMap;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,11 +49,11 @@ public class BestFoodsActivity extends AppCompatActivity {
                     ArrayAdapter<String> foodBestAdapter = createAdapter(foodsBestArr[i-1]);
                     foodBestAdapter.setDropDownViewResource( R.layout.spinner_item );
 
-
-                    String item = (String) foodBestAdapter.getItem( i );
-                    currFood= foodsMap.get(item);
-                    foodLabel.setText( item );
-
+                    for (int j = 0; j < foodBestAdapter.getCount(); j++) {
+                        String item = (String) foodBestAdapter.getItem( j );
+                        currFood = foodsMap.get( item );
+                        foodLabel.setText( item );
+                    }
                 }
             }
 

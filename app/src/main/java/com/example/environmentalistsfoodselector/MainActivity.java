@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String selectItemText = (String) adapterView.getItemAtPosition(i); // gets unit name
                 currentUnit = selectItemText; // gets Unit object from unitsMap
-                if(amount.getText().length() != 0) { // if food is selected and amount isnt empty
+                if(amount.getText().length() != 0) { // if food is selected and amount isn't empty
                     String amtStr = amount.getText().toString();
                     currentAmount = Float.parseFloat(amtStr);
                     setLabels(carbonLabel, waterLabel, currentAmount);

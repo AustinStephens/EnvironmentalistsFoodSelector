@@ -38,8 +38,8 @@ public class BestFoodsActivity extends AppCompatActivity {
         cat.setAdapter(catAdapter);
         cat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) { // i is the position in the array
-                if(i > 0) { // first position is invalid
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+             /*   if(i > 0) { // first position is invalid
                     // selects the string array resource to populate the foods dropdown with
                     ArrayAdapter<String> foodAdapter = createAdapter(foodsArr[i-1]);
                     foodAdapter.setDropDownViewResource(R.layout.spinner_item);
@@ -47,7 +47,7 @@ public class BestFoodsActivity extends AppCompatActivity {
                     waterLabel.setText("0");
                     foodLabel.setText("Select catagory");
 
-                }
+                }*/
             }
 
             @Override

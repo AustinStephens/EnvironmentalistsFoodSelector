@@ -184,20 +184,28 @@
             android:id="@+id/bestButton"
             android:layout_width="201dp"
             android:layout_height="46dp"
-            android:layout_marginTop="75dp"
+            android:layout_marginTop="50dp"
             android:text="Best Foods"
             app:layout_constraintEnd_toStartOf="@+id/worstButton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/addItem" />
+            app:layout_constraintTop_toBottomOf="@+id/addItem"
+            style="?android:attr/borderlessButtonStyle"
+            android:textColor="@color/darkgrey"
+            android:textSize="20dp"
+            />
 
         <Button
             android:id="@+id/worstButton"
             android:layout_width="201dp"
             android:layout_height="46dp"
-            android:layout_marginTop="75dp"
+            android:layout_marginTop="50dp"
             android:text="Worst Foods"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/itemsPage" />
+            app:layout_constraintTop_toBottomOf="@+id/itemsPage"
+            style="?android:attr/borderlessButtonStyle"
+            android:textColor="@color/darkgrey"
+            android:textSize="20dp"
+            />
 
         <View
             android:id="@+id/divider"

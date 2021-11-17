@@ -13,15 +13,17 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Objects;
 
 public class BestFoodsActivity extends AppCompatActivity {
 
-    public int[] foodsArr = {R.array.BakedBest, R.array.DairyBest, R.array.DrinkBest, R.array.DryBest, R.array.FruitBest, R.array.MeatBest,
+    public int[] foodsBestArr = {R.array.BakedBest, R.array.DairyBest, R.array.DrinkBest, R.array.DryBest, R.array.FruitBest, R.array.MeatBest,
             R.array.NutsBest, R.array.OilsBest, R.array.ProcessedBest, R.array.JamsBest, R.array.SaucesBest, R.array.SeafoodBest, R.array.SweetsBest, R.array.VegetableBest};
 
-    ListView list;
-
+    public Food currFood;
+    public HashMap<String, Food> foodsMap;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,19 +32,27 @@ public class BestFoodsActivity extends AppCompatActivity {
         TextView foodLabel = (TextView) findViewById(R.id.foodLabel); // Name of Selected Food Label
 
 
+        foodsMap = FoodsMap.getInstance().getFoodsMap();
+
         //Categories dropdown
         Spinner cat = (Spinner) findViewById(R.id.Categories);
         ArrayAdapter<String> catAdapter = createAdapter(R.array.categories);
         catAdapter.setDropDownViewResource(R.layout.spinner_item);
         cat.setAdapter(catAdapter);
+
+        // when click on an item on spinner
         cat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
              if(i >0) { // first position is invalid
-                    // selects the string array resource to populate the foods dropdown with
-                    ArrayAdapter<String> foodAdapter = createAdapter(foodsArr[i-1]);
-                    foodAdapter.setDropDownViewResource(R.layout.spinner_item);
-                    foodLabel.setText("Select catagory");
+
+                    ArrayAdapter<String> foodBestAdapter = createAdapter(foodsBestArr[i-1]);
+                    foodBestAdapter.setDropDownViewResource( R.layout.spinner_item );
+
+
+                    String item = (String) foodBestAdapter.getItem( i );
+                    currFood= foodsMap.get(item);
+                    foodLabel.setText( item );
 
                 }
             }

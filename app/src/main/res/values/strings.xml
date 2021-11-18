@@ -581,75 +581,102 @@
         <item>gallon</item>
     </string-array>
 
-    <string-array name="BakedBest">
+    <string-array name="BakedBestWorst">
         <item>Bread</item>
         <item>Naan Bread</item>
+        <item>Doughnut</item>
+        <item>Muffin</item>
     </string-array>
 
-    <string-array name="DairyBest">
+    <string-array name="DairyBestWorst">
         <item>Milk - Almond</item>
         <item>Yogurt</item>
+        <item>Butter</item>
+        <item>Cheese</item>
     </string-array>
 
-    <string-array name="DrinkBest">
-        <item>Beer</item>
+    <string-array name="DrinkBestWorst">
         <item>Black Tea</item>
         <item>Bottled Water</item>
+        <item>Hot Chocolate</item>
+        <item>Pineapple Juice</item>
     </string-array>
 
-    <string-array name="DryBest">
+    <string-array name="DryBestWorst">
         <item>Lentils</item>
         <item>Vanilla</item>
+        <item>Granola</item>
+        <item>Soybeans</item>
     </string-array>
 
-    <string-array name="FruitBest">
+    <string-array name="FruitBestWorst">
         <item>Nectarine</item>
         <item>Apricot</item>
+        <item>Mango</item>
+        <item>Papaya</item>
     </string-array>
 
-    <string-array name="MeatBest">
+    <string-array name="MeatBestWorst">
         <item>Chicken</item>
         <item>Tofu</item>
+        <item>Beef</item>
+        <item>Lamb</item>
     </string-array>
 
-    <string-array name="NutsBest">
+    <string-array name="NutsBestWorst">
         <item>Peanuts</item>
         <item>Sunflower Seeds</item>
+        <item>Pumpkin Seeds</item>
+        <item>Sesame Seeds</item>
     </string-array>
 
-    <string-array name="OilsBest">
+    <string-array name="OilsBestWorst">
         <item>Corn Oil</item>
         <item>Soybean Oil</item>
+        <item>Palm Oil</item>
+        <item>Peanut Oil</item>
     </string-array>
 
-    <string-array name="ProcessedBest">
+    <string-array name="ProcessedBestWorst">
         <item>Baked Beans</item>
         <item>Custard</item>
+        <item>Fisherman Pie</item>
+        <item>Pork Roast</item>
     </string-array>
 
-    <string-array name="JamsBest">
+    <string-array name="JamsBestWorst">
         <item>Golden Syrup</item>
         <item>Maple Syrup</item>
+        <item>Chocolate Spread</item>
+        <item>Marmalade</item>
     </string-array>
 
-    <string-array name="SaucesBest">
+    <string-array name="SaucesBestWorst">
         <item>Mustard</item>
         <item>Stock - Vegetable</item>
+        <item>Pesto</item>
+        <item>Tomato Ketchup</item>
     </string-array>
 
-    <string-array name="SeafoodBest">
+    <string-array name="SeafoodBestWorst">
         <item>Fish Sticks</item>
         <item>Herring</item>
+        <item>Crab</item>
+        <item>Shrimp</item>
     </string-array>
 
-    <string-array name="SweetsBest">
+    <string-array name="SweetsBestWorst">
         <item>Mints</item>
         <item>Toffee</item>
+        <item>Chocolate</item>
+        <item>Fudge</item>
     </string-array>
 
-    <string-array name="VegetableBest">
+    <string-array name="VegetableBestWorst">
         <item>Artichoke</item>
         <item>Garlic</item>
+        <item>Green beans</item>
+        <item>Peas</item>
     </string-array>
 
 </resources>

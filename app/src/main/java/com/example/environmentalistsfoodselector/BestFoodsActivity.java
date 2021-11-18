@@ -19,10 +19,10 @@ import java.util.Objects;
 
 public class BestFoodsActivity extends AppCompatActivity {
 
-    public int[] foodsBestArr = {R.array.BakedBest, R.array.DairyBest, R.array.DrinkBest, R.array.DryBest, R.array.FruitBest, R.array.MeatBest,
-            R.array.NutsBest, R.array.OilsBest, R.array.ProcessedBest, R.array.JamsBest, R.array.SaucesBest, R.array.SeafoodBest, R.array.SweetsBest, R.array.VegetableBest};
+    // use the same array for best and worst, first half is best, second half is worst
+    public int[] foodsBestArr = {R.array.BakedBestWorst, R.array.DairyBestWorst, R.array.DrinkBestWorst, R.array.DryBestWorst, R.array.FruitBestWorst, R.array.MeatBestWorst,
+            R.array.NutsBestWorst, R.array.OilsBestWorst, R.array.ProcessedBestWorst, R.array.JamsBestWorst, R.array.SaucesBestWorst, R.array.SeafoodBestWorst, R.array.SweetsBestWorst, R.array.VegetableBestWorst};
 
-    public Food currFood;
     public ArrayList <Food> list;
     public ArrayList <String> names;
     public HashMap<String, Food> foodsMap;
@@ -39,9 +39,8 @@ public class BestFoodsActivity extends AppCompatActivity {
 
         // 2nd item
         TextView foodLabel2 = (TextView) findViewById(R.id.foodLabel2); // Name of Selected Food Label
-        TextView carbon2;
-        TextView water2;
-
+        TextView carbon2=(TextView) findViewById(R.id.carbon2);
+        TextView water2 =  (TextView) findViewById(R.id.water2);
         // call the main FoodsMap singleton
         foodsMap = FoodsMap.getInstance().getFoodsMap();
 
@@ -64,7 +63,9 @@ public class BestFoodsActivity extends AppCompatActivity {
                     // list of best food for each cat item, and names
                     list = new ArrayList<Food>();
                     names = new ArrayList<String>();
-                    for (int j = 0; j < foodBestAdapter.getCount(); j++) {
+
+                    // use only first 2 item, the last 2 is for worst case
+                    for (int j = 0; j < 2; j++) {
                         String item = (String) foodBestAdapter.getItem( j );
 
                          // store name in names array, because Food obj doesn't have name
@@ -75,11 +76,14 @@ public class BestFoodsActivity extends AppCompatActivity {
 
                     // populate data
                     foodLabel1.setText( names.get( 0 ) );
+                 foodLabel2.setText( names.get( 1 ) );
+
                  DecimalFormat f = new DecimalFormat("#.##");
                  //carbon1.setText("Carbon Footprint:\n" + f.format(list.get( 0 ).carbonUsage) + " gCO\u2082e");
                 // water1.setText("Total Water Footprint:\n" + f.format(list.get( 0 ).waterUsage)+ " Gallons");
-System.out.println(list.size());
-                 //System.out.println("Carbon Footprint:\n" + f.format(list.get( 0 ).carbonUsage) + " gCO\u2082e");
+                    System.out.println(list.size());
+
+                    //System.out.println("Carbon Footprint:\n" + f.format(list.get( 0 ).carbonUsage) + " gCO\u2082e");
 
 
                 }

@@ -79,14 +79,44 @@
         android:id="@+id/foodLabel2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="114dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="240dp"
         android:text=""
+
+        android:textColor="@color/SecondaryText"
+        android:textSize="15dp"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.198"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/foodLabel1" />
+
+    <TextView
+        android:id="@+id/carbon2"
+
+        android:layout_width="102dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="128dp"
+        android:text="c"
+
+        android:textColor="@color/SecondaryText"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="@id/foodLabel2"
+        app:layout_constraintTop_toTopOf="@id/Categories" />
+
+    <TextView
+        android:id="@+id/water2"
+
+        android:layout_width="103dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="20dp"
+        android:text="water "
+        android:textColor="@color/SecondaryText"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="@id/foodLabel2"
+        app:layout_constraintTop_toTopOf="@id/carbon2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

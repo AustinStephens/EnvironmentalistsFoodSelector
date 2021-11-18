@@ -13,37 +13,69 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class WorstFoodsActivity extends AppCompatActivity {
 
-    public int[] foodsArr = {R.array.BakedFoods, R.array.DairyFoods, R.array.DrinkFoods, R.array.DryFoods, R.array.FruitFoods, R.array.MeatFoods,
-            R.array.NutsFoods, R.array.OilsFoods, R.array.ProcessedFoods, R.array.JamsFoods, R.array.SaucesFoods, R.array.SeafoodFoods, R.array.SweetsFoods, R.array.VegetableFoods};
+    // use the same array for best and worst, first half is best, second half is worst
+    public int[] foodsArr = {R.array.BakedBestWorst, R.array.DairyBestWorst, R.array.DrinkBestWorst, R.array.DryBestWorst, R.array.FruitBestWorst, R.array.MeatBestWorst,
+            R.array.NutsBestWorst, R.array.OilsBestWorst, R.array.ProcessedBestWorst, R.array.JamsBestWorst, R.array.SaucesBestWorst, R.array.SeafoodBestWorst, R.array.SweetsBestWorst, R.array.VegetableBestWorst};
 
-    ListView list;
+    public ArrayList<Food> list;
+    public ArrayList <String> names;
+    public HashMap<String, Food> foodsMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_worstfoods);
 
-        TextView foodLabel = (TextView) findViewById(R.id.foodLabel); // Name of Selected Food Label
-        TextView carbonLabel = (TextView) findViewById(R.id.carbon); // carbon usage label
-        TextView waterLabel = (TextView) findViewById(R.id.water);
+        // first item
+        TextView foodLabel1 = (TextView) findViewById(R.id.foodLabel1);
+        TextView carbon1 = (TextView) findViewById(R.id.carbon1);
+        TextView water1 =  (TextView) findViewById(R.id.water1);
+
+        // 2nd item
+        TextView foodLabel2 = (TextView) findViewById(R.id.foodLabel2); // Name of Selected Food Label
+        TextView carbon2=(TextView) findViewById(R.id.carbon2);
+        TextView water2 =  (TextView) findViewById(R.id.water2);
+        // call the main FoodsMap singleton
+        foodsMap = FoodsMap.getInstance().getFoodsMap();
 
         //Categories dropdown
         Spinner cat = (Spinner) findViewById(R.id.Categories);
         ArrayAdapter<String> catAdapter = createAdapter(R.array.categories);
         catAdapter.setDropDownViewResource(R.layout.spinner_item);
         cat.setAdapter(catAdapter);
+
         cat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) { // i is the position in the array
                 if(i > 0) { // first position is invalid
-                    // selects the string array resource to populate the foods dropdown with
-                    ArrayAdapter<String> foodAdapter = createAdapter(foodsArr[i-1]);
-                    foodAdapter.setDropDownViewResource(R.layout.spinner_item);
-                    carbonLabel.setText("0");
-                    waterLabel.setText("0");
-                    foodLabel.setText("Select catagory");
+
+                    //food string adapter from spinner item, get the corresponding array resource from strinig.xml
+                    ArrayAdapter<String> foodBestAdapter = createAdapter(foodsArr[i-1]);
+                    foodBestAdapter.setDropDownViewResource( R.layout.spinner_item );
+
+                    // list of best food for each cat item, and names
+                    list = new ArrayList<Food>();
+                    names = new ArrayList<String>();
+
+                    // use the last 2 items from food array, the first 2 is for best case
+                    for (int j = 0; j < 2; j++) {
+                        String item = (String) foodBestAdapter.getItem( j+ 2);
+
+                        // store name in names array, because Food obj doesn't have name
+                        names.add(item);
+                        // store food obj of that food name
+                        list.add(foodsMap.get(item));
+                    }
+
+                    // populate data
+                    foodLabel1.setText( names.get( 0 ) );
+                    foodLabel2.setText( names.get( 1 ) );
+
 
                 }
             }

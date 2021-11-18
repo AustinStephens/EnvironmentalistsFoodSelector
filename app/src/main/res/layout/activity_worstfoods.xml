@@ -7,15 +7,115 @@
 
     <Spinner
         android:id="@+id/Categories"
-        android:layout_width="260dp"
-        android:layout_height="50dp"
+        android:layout_width="232dp"
+        android:layout_height="44dp"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="92dp"
         android:layout_marginEnd="76dp"
         android:backgroundTint="@color/PrimaryBackground"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-         />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="165dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="188dp"
+        android:text="Best Foods"
+        android:textAlignment="center"
+        android:textColor="@color/teal_700"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/foodLabel1"
+
+        android:layout_width="137dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="240dp"
+        android:text="name "
+        android:textColor="@color/SecondaryText"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/Categories" />
+
+    <TextView
+        android:id="@+id/carbon1"
+
+        android:layout_width="102dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="76dp"
+        android:text="c"
+        android:textColor="@color/SecondaryText"
+
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="@id/foodLabel1"
+        app:layout_constraintTop_toTopOf="@id/Categories" />
+
+    <TextView
+        android:id="@+id/water1"
+
+        android:layout_width="103dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="20dp"
+        android:text="water "
+        android:textColor="@color/SecondaryText"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="@id/foodLabel1"
+        app:layout_constraintTop_toTopOf="@id/carbon1" />
+
+    <TextView
+        android:id="@+id/foodLabel2"
+        android:layout_width="136dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="240dp"
+        android:text="name 2"
+
+        android:textColor="@color/SecondaryText"
+        android:textSize="15dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/foodLabel1" />
+
+    <TextView
+        android:id="@+id/carbon2"
+
+        android:layout_width="102dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="128dp"
+        android:text="c"
+
+        android:textColor="@color/SecondaryText"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="@id/foodLabel2"
+        app:layout_constraintTop_toTopOf="@id/Categories" />
+
+    <TextView
+        android:id="@+id/water2"
+
+        android:layout_width="103dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="20dp"
+        android:text="water "
+        android:textColor="@color/SecondaryText"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="@id/foodLabel2"
+        app:layout_constraintTop_toTopOf="@id/carbon2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

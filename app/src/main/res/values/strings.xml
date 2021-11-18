@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Environmentalist Food Selector</string>
+    <string name="app_name">Environmentalists Food Selector</string>
     <string-array name="categories">
         <item>Select Category</item>
         <item>Baked Goods</item> <!-- Combine with Biscuits and Confections -->

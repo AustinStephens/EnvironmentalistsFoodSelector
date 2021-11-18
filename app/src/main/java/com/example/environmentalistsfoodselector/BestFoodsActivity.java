@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
@@ -22,6 +23,8 @@ public class BestFoodsActivity extends AppCompatActivity {
             R.array.NutsBest, R.array.OilsBest, R.array.ProcessedBest, R.array.JamsBest, R.array.SaucesBest, R.array.SeafoodBest, R.array.SweetsBest, R.array.VegetableBest};
 
     public Food currFood;
+    public ArrayList <Food> list;
+    public ArrayList <String> names;
     public HashMap<String, Food> foodsMap;
 
     @Override
@@ -29,9 +32,17 @@ public class BestFoodsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bestfoods);
 
-        TextView foodLabel = (TextView) findViewById(R.id.foodLabel); // Name of Selected Food Label
+        // first item
+        TextView foodLabel1 = (TextView) findViewById(R.id.foodLabel1);
+        TextView carbon1 = (TextView) findViewById(R.id.carbon1);
+        TextView water1 =  (TextView) findViewById(R.id.water1);
 
+        // 2nd item
+        TextView foodLabel2 = (TextView) findViewById(R.id.foodLabel2); // Name of Selected Food Label
+        TextView carbon2;
+        TextView water2;
 
+        // call the main FoodsMap singleton
         foodsMap = FoodsMap.getInstance().getFoodsMap();
 
         //Categories dropdown
@@ -46,14 +57,31 @@ public class BestFoodsActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
              if(i >0) { // first position is invalid
 
+                    //food string adapter from spinner item, get the corresponding array resource from strinig.xml
                     ArrayAdapter<String> foodBestAdapter = createAdapter(foodsBestArr[i-1]);
                     foodBestAdapter.setDropDownViewResource( R.layout.spinner_item );
 
+                    // list of best food for each cat item, and names
+                    list = new ArrayList<Food>();
+                    names = new ArrayList<String>();
                     for (int j = 0; j < foodBestAdapter.getCount(); j++) {
                         String item = (String) foodBestAdapter.getItem( j );
-                        currFood = foodsMap.get( item );
-                        foodLabel.setText( item );
+
+                         // store name in names array, because Food obj doesn't have name
+                        names.add(item);
+                        // store food obj of that food name
+                        list.add(foodsMap.get(item));
                     }
+
+                    // populate data
+                    foodLabel1.setText( names.get( 0 ) );
+                 DecimalFormat f = new DecimalFormat("#.##");
+                 //carbon1.setText("Carbon Footprint:\n" + f.format(list.get( 0 ).carbonUsage) + " gCO\u2082e");
+                // water1.setText("Total Water Footprint:\n" + f.format(list.get( 0 ).waterUsage)+ " Gallons");
+System.out.println(list.size());
+                 //System.out.println("Carbon Footprint:\n" + f.format(list.get( 0 ).carbonUsage) + " gCO\u2082e");
+
+
                 }
             }
 

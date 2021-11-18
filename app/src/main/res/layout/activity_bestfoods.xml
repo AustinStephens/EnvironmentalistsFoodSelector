@@ -34,45 +34,59 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/foodLabel"
+        android:id="@+id/foodLabel1"
 
-        android:layout_marginStart="113dp"
-        android:layout_marginTop="184dp"
+        android:layout_width="137dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="76dp"
         android:layout_marginEnd="240dp"
-        android:text="TextView"
+        android:text="name "
+        android:textColor="@color/SecondaryText"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:textColor="@color/SecondaryText"
-        android:textSize="15dp" />/>
+        app:layout_constraintTop_toTopOf="@id/Categories" />
 
     <TextView
-        android:id="@+id/best2"
+        android:id="@+id/carbon1"
+
+        android:layout_width="102dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="76dp"
+        android:text="c"
+        android:textColor="@color/SecondaryText"
+
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="@id/foodLabel1"
+        app:layout_constraintTop_toTopOf="@id/Categories" />
+
+    <TextView
+        android:id="@+id/water1"
+
+        android:layout_width="103dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="20dp"
+        android:text="watwr "
+        android:textColor="@color/SecondaryText"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="@id/foodLabel1"
+        app:layout_constraintTop_toTopOf="@id/carbon1" />
+
+    <TextView
+        android:id="@+id/foodLabel2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="114dp"
-        android:layout_marginTop="228dp"
+        android:layout_marginTop="116dp"
         android:layout_marginEnd="240dp"
-        android:text="TextView"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/BestList"
-        android:layout_width="259dp"
-        android:layout_height="146dp"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="260dp"
-        android:layout_marginEnd="77dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/foodLabel1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

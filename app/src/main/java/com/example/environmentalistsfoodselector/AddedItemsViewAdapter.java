@@ -88,8 +88,7 @@ public class AddedItemsViewAdapter extends RecyclerView.Adapter<AddedItemsViewAd
                 int pos = getAdapterPosition();
                 items.remove(pos);
                 notifyDataSetChanged();
-                //notifyItemRemoved(pos);
-                //notifyItemRangeChanged(pos, items.size());
+
             }
         }
     }

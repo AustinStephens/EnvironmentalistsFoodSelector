@@ -263,7 +263,7 @@ public class FoodsMap {
 
     }
 
-    public HashMap<String, Food> getFoodMap(){
+    public HashMap<String, Food> getFoodsMap(){
         return foodsMap;
     }
 }

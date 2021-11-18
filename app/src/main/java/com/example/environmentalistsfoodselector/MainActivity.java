@@ -29,10 +29,12 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
+    // array of foods from res/values/string
+
     public int[] foodsArrays = {R.array.BakedFoods, R.array.DairyFoods, R.array.DrinkFoods, R.array.DryFoods, R.array.FruitFoods, R.array.MeatFoods,
             R.array.NutsFoods, R.array.OilsFoods, R.array.ProcessedFoods, R.array.JamsFoods, R.array.SaucesFoods, R.array.SeafoodFoods, R.array.SweetsFoods, R.array.VegetableFoods};
 
-    // create food and unit map object, then get the maps for later use
+    // create food and unit map, then get the maps for later use
     public HashMap<String, Food> foodsMap;
     public HashMap<String, Unit> unitsMap;
 
@@ -49,11 +51,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // create food and unit maps
-        foodsMap = FoodsMap.getInstance().getFoodMap();
+        foodsMap = FoodsMap.getInstance().getFoodsMap();
         unitsMap = UnitsMap.getInstance().getUnitsMap();
 
-        //Widget Vars
-
+        //Widget Vars connected to res/layout/activity_main
         TextView foodLabel = (TextView) findViewById(R.id.foodLabel); // Name of Selected Food Label
         TextView carbonLabel = (TextView) findViewById(R.id.carbon); // carbon usage label
         TextView waterLabel = (TextView) findViewById(R.id.water); // water usage label
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         bestFoods.setWidth(screenWidth/2);
         worstFoods.setWidth(screenWidth/2);
 
-        //Listeners
+        //Listeners: asynchronous callback
         amount.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int key, KeyEvent event) {
@@ -96,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String selectItemText = (String) adapterView.getItemAtPosition(i); // gets unit name
                 currentUnit = selectItemText; // gets Unit object from unitsMap
-                if(amount.getText().length() != 0) { // if food is selected and amount isnt empty
+                if(amount.getText().length() != 0) { // if food is selected and amount isn't empty
                     String amtStr = amount.getText().toString();
                     currentAmount = Float.parseFloat(amtStr);
                     setLabels(carbonLabel, waterLabel, currentAmount);
@@ -149,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
                         currentUnit = "g";
                     else
                         currentUnit = "mL";
+
                     setLabels(carbonLabel, waterLabel, currentAmount);
 
                     //Array of food objects for similar foods
@@ -206,6 +208,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // other functional buttons
         addItems.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -242,18 +245,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public String skeleton0(){
-        return "Test Skeleton0 Code";
-    }
 
-    public String skeleton1() {
-       return "Test Skeleton1 Code";
-
-    }
-    
-    public String skeleton2() {
-        return "Test Skeleton2 Code";
-    }
 
     // Helper Function to create both category and foods spinners, passes in the string array resource ID
     private ArrayAdapter<String> createAdapter(int id) {
@@ -296,5 +288,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // skeleton tests for circleCi
+    public String skeleton0(){
+        return "Test Skeleton0 Code";
+    }
+    public String skeleton1() { return "Test Skeleton1 Code"; }
+    public String skeleton2() {
+        return "Test Skeleton2 Code";
+    }
 
 }

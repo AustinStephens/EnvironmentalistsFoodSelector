@@ -9,8 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.w3c.dom.Text;
-
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
@@ -31,6 +29,7 @@ public class ItemsListActivity extends AppCompatActivity {
         clearItems = (Button) findViewById(R.id.clearButton); // Clear Button
         carbonTotal = (TextView) findViewById(R.id.carbonTotal); // Carbon Total Label
         waterTotal = (TextView) findViewById(R.id.waterTotal); // Water Total Label
+
         // Need to add recycler View Logic
         itemsList = (RecyclerView) findViewById(R.id.itemsList); // List
         itemsList.setLayoutManager(new LinearLayoutManager(this));

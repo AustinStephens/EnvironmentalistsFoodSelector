@@ -43,7 +43,7 @@
             android:layout_marginTop="4dp"
             android:text="Select Food"
             android:textAlignment="center"
-            android:textColor="@color/teal_700"
+            android:textColor="@color/ThirdText"
             android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"

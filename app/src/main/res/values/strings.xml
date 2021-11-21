@@ -43,6 +43,7 @@
         <item>Butter</item>
         <item>Buttermilk</item>
         <item>Cheese</item>
+        <item>Cream Cheese</item>
         <item>Ice Cream</item>
         <item>Milk</item>
         <item>Milk - Almond</item>
@@ -149,6 +150,7 @@
         <item>Beef</item>
         <item>Chicken</item>
         <item>Duck</item>
+        <item>Eggs</item>
         <item>Goat</item>
         <item>Goose</item>
         <item>Ham</item>
@@ -331,6 +333,7 @@
         <item>Butter</item>
         <item>Buttermilk</item>
         <item>Cheese</item>
+        <item>Cream Cheese</item>
         <item>Ice Cream</item>
         <item>Milk</item>
         <item>Milk - Almond</item>
@@ -421,6 +424,7 @@
         <item>Beef</item>
         <item>Chicken</item>
         <item>Duck</item>
+        <item>Eggs</item>
         <item>Goat</item>
         <item>Goose</item>
         <item>Ham</item>

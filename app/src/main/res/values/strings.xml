@@ -83,7 +83,7 @@
         <item>Bay Leaves</item>
         <item>Black Beans</item>
         <item>Black Pepper</item>
-        <item>Chilli Power</item>
+        <item>Chilli Powder</item>
         <item>Chives</item>
         <item>Cinnamon</item>
         <item>Cumin</item>
@@ -106,7 +106,7 @@
         <item>Sugar - White</item>
         <item>Sugar - Brown</item>
         <item>Thyme</item>
-        <item>Tumeric</item>
+        <item>Turmeric</item>
         <item>Vanilla</item>
         <item>Wheat</item>
     </string-array>
@@ -294,7 +294,7 @@
         <item>Cucumber</item>
         <item>Garlic</item>
         <item>Ginger</item>
-        <item>Green beans</item>
+        <item>Green Beans</item>
         <item>Kale</item>
         <item>Leek</item>
         <item>Lettuce</item>
@@ -363,7 +363,7 @@
         <item>Bay Leaves</item>
         <item>Black Beans</item>
         <item>Black Pepper</item>
-        <item>Chilli Power</item>
+        <item>Chilli Powder</item>
         <item>Chives</item>
         <item>Cinnamon</item>
         <item>Cumin</item>
@@ -386,7 +386,7 @@
         <item>Sugar - White</item>
         <item>Sugar - Brown</item>
         <item>Thyme</item>
-        <item>Tumeric</item>
+        <item>Turmeric</item>
         <item>Vanilla</item>
         <item>Wheat</item>
         <item>Apples</item>
@@ -534,7 +534,7 @@
         <item>Cucumber</item>
         <item>Garlic</item>
         <item>Ginger</item>
-        <item>Green beans</item>
+        <item>Green Beans</item>
         <item>Kale</item>
         <item>Leek</item>
         <item>Lettuce</item>

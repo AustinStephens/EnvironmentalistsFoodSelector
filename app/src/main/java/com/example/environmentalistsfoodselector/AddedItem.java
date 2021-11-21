@@ -30,10 +30,6 @@ public class AddedItem {
         return unitName;
     }
 
-    public float getAmount() {
-        return amount;
-    }
-
     // Information functions
     public float getCarbon() {
         float carbon = amount * unit.scale;

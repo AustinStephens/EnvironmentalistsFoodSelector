@@ -48,7 +48,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //get screen width
         int screenWidth = Resources.getSystem().getDisplayMetrics().widthPixels;
-        setContentView(R.layout.activity_main);
+        if(screenWidth > 600)
+            setContentView(R.layout.activity_main);
+        else
+            setContentView(R.layout.activity_main_small);
 
         // create food and unit maps
         foodsMap = FoodsMap.getInstance().getFoodsMap();

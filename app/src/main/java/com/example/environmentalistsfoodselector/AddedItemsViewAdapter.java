@@ -40,18 +40,29 @@ public class AddedItemsViewAdapter extends RecyclerView.Adapter<AddedItemsViewAd
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         int width = Resources.getSystem().getDisplayMetrics().widthPixels;
+        FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        FrameLayout.LayoutParams lp2 = new FrameLayout.LayoutParams(
+                400, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        if(width <= 600) {
+            lp.setMargins(width - 70, 8, 0, 0);
+            FrameLayout.LayoutParams lp3 = new FrameLayout.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            lp3.setMargins(100, 30, 0, 0);
+            lp2.setMargins(width - 520, 30, 0, 0);
+            holder.nameText.setLayoutParams(lp3);
+        } else {
+            lp.setMargins(width - 230, 8, 0, 0);
+            lp2.setMargins(width - 680, 45, 0, 0);
+        }
+
         AddedItem item = items.get(position);
         holder.nameText.setText(item.getName());
         holder.amountText.setText(item.getAmountText());
         holder.carbonText.setText(item.getCarbonText(totalCarbon));
         holder.waterText.setText(item.getWaterText(totalWater));
-        FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        lp.setMargins(width - 230, 8, 0, 0);
         holder.deleteButton.setLayoutParams(lp);
-        FrameLayout.LayoutParams lp2 = new FrameLayout.LayoutParams(
-                400, ViewGroup.LayoutParams.WRAP_CONTENT);
-        lp2.setMargins(width - 680, 45, 0, 0);
         holder.amountText.setLayoutParams(lp2);
     }
 

@@ -28,7 +28,12 @@ public class BestFoodsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bestfoods);
+        //get screen width
+        int screenWidth = Resources.getSystem().getDisplayMetrics().widthPixels;
+        if(screenWidth > 600)
+            setContentView(R.layout.activity_bestfoods);
+        else
+            setContentView(R.layout.activity_bestfoods_small);
 
         // first item
         TextView foodLabel1 = (TextView) findViewById(R.id.foodLabel1);

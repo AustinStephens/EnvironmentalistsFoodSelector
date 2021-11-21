@@ -41,11 +41,27 @@ public class RecommendedFoodsViewAdapter extends RecyclerView.Adapter<Recommende
         Food food = data.get(position);
         FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT);
-        lp.setMargins(70, 40, 0, 0);
+        if (width > 600) {
+            lp.setMargins(70, 40, 0, 0);
+        } else {
+            lp.setMargins(70, 20, 0, 0);
+            FrameLayout.LayoutParams lp2 = new FrameLayout.LayoutParams(
+                    FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT);
+            FrameLayout.LayoutParams lp3 = new FrameLayout.LayoutParams(
+                    FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT);
+            lp2.setMargins(320, 12, 0, 0);
+            holder.carbonView.setLayoutParams(lp2);
+            lp3.setMargins(320, 42, 0, 0);
+            holder.waterView.setLayoutParams(lp3);
+        }
+
 
         // if we passed in the current food object, meaning the list is empty
         if(currentFood.equals(food)) {
-            lp.setMargins((width / 2) - 400, 40, 0, 0);
+            if(width > 600)
+                lp.setMargins((width / 2) - 400, 40, 0, 0);
+            else
+                lp.setMargins(width / 2 - 190, 40, 0, 0);
             holder.nameView.setText("Excellent Selection! No Better Foods Found!"); // looks weird without spaces, but may need to keep the same because this doesn't adjust to different screen sizes
         }
         else if(food != null){

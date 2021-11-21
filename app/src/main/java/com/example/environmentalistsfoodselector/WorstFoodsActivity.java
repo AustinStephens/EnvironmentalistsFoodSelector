@@ -1,5 +1,6 @@
 package com.example.environmentalistsfoodselector;
 
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -27,7 +28,12 @@ public class WorstFoodsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_worstfoods);
+        //get screen width
+        int screenWidth = Resources.getSystem().getDisplayMetrics().widthPixels;
+        if(screenWidth > 600)
+            setContentView(R.layout.activity_worstfoods);
+        else
+            setContentView(R.layout.activity_worstfoods_small);
 
         // first item
         TextView foodLabel1 = (TextView) findViewById(R.id.foodLabel1);

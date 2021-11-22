@@ -1,4 +1,4 @@
-package com.example.environmentalistsfoodselector;
+package ufl.ibm.environmentalistsfoodselector;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -31,6 +31,7 @@ public class RecommendedFoodsViewAdapter extends RecyclerView.Adapter<Recommende
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.similar_foods_layout, parent, false);
+        view.setEnabled(false);
         return new ViewHolder(view);
     }
 
@@ -99,6 +100,7 @@ public class RecommendedFoodsViewAdapter extends RecyclerView.Adapter<Recommende
     public int getItemCount() {
         return data.size();
     }
+
 
 
     // stores and recycles views as they are scrolled off screen

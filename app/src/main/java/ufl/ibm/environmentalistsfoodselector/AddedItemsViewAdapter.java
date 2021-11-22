@@ -1,4 +1,4 @@
-package com.example.environmentalistsfoodselector;
+package ufl.ibm.environmentalistsfoodselector;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -11,7 +11,8 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.text.DecimalFormat;
+import ufl.ibm.environmentalistsfoodselector.R;
+
 import java.util.ArrayList;
 
 public class AddedItemsViewAdapter extends RecyclerView.Adapter<AddedItemsViewAdapter.ViewHolder> {
@@ -44,17 +45,18 @@ public class AddedItemsViewAdapter extends RecyclerView.Adapter<AddedItemsViewAd
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         FrameLayout.LayoutParams lp2 = new FrameLayout.LayoutParams(
                 400, ViewGroup.LayoutParams.WRAP_CONTENT);
+        FrameLayout.LayoutParams lp3 = new FrameLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
         if(width <= 600) {
             lp.setMargins(width - 70, 8, 0, 0);
-            FrameLayout.LayoutParams lp3 = new FrameLayout.LayoutParams(
-                    ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             lp3.setMargins(100, 30, 0, 0);
             lp2.setMargins(width - 520, 30, 0, 0);
-            holder.nameText.setLayoutParams(lp3);
+
         } else {
             lp.setMargins(width - 230, 8, 0, 0);
             lp2.setMargins(width - 680, 45, 0, 0);
+            lp3.setMargins(150, 45, 0, 0);
         }
 
         AddedItem item = items.get(position);
@@ -64,6 +66,7 @@ public class AddedItemsViewAdapter extends RecyclerView.Adapter<AddedItemsViewAd
         holder.waterText.setText(item.getWaterText(totalWater));
         holder.deleteButton.setLayoutParams(lp);
         holder.amountText.setLayoutParams(lp2);
+        holder.nameText.setLayoutParams(lp3);
     }
 
     // total number of rows

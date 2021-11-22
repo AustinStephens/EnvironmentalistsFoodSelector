@@ -1,4 +1,4 @@
-package com.example.environmentalistsfoodselector;
+package ufl.ibm.environmentalistsfoodselector;
 
 import java.util.ArrayList;
 

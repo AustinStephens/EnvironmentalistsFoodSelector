@@ -1,4 +1,4 @@
-package com.example.environmentalistsfoodselector;
+package ufl.ibm.environmentalistsfoodselector;
 
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,24 +17,23 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class BestFoodsActivity extends AppCompatActivity {
+public class WorstFoodsActivity extends AppCompatActivity {
 
     // use the same array for best and worst, first half is best, second half is worst
-    public int[] foodsBestArr = {R.array.BakedBestWorst, R.array.DairyBestWorst, R.array.DrinkBestWorst, R.array.DryBestWorst, R.array.FruitBestWorst, R.array.MeatBestWorst,
+    public int[] foodsArr = {R.array.BakedBestWorst, R.array.DairyBestWorst, R.array.DrinkBestWorst, R.array.DryBestWorst, R.array.FruitBestWorst, R.array.MeatBestWorst,
             R.array.NutsBestWorst, R.array.OilsBestWorst, R.array.ProcessedBestWorst, R.array.JamsBestWorst, R.array.SaucesBestWorst, R.array.SeafoodBestWorst, R.array.SweetsBestWorst, R.array.VegetableBestWorst};
 
     public HashMap<String, Food> foodsMap;
     final private int SIZE = 2;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //get screen width
         int screenWidth = Resources.getSystem().getDisplayMetrics().widthPixels;
         if(screenWidth > 600)
-            setContentView(R.layout.activity_bestfoods);
+            setContentView(R.layout.activity_worstfoods);
         else
-            setContentView(R.layout.activity_bestfoods_small);
+            setContentView(R.layout.activity_worstfoods_small);
 
         // first item
         TextView foodLabel1 = (TextView) findViewById(R.id.foodLabel1);
@@ -59,19 +59,19 @@ public class BestFoodsActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if(i >0) { // first position is invalid
                     //food string adapter from spinner item, get the corresponding array resource from string.xml
-                    String[] names = getResources().getStringArray(foodsBestArr[i-1]);
+                    String[] names = getResources().getStringArray(foodsArr[i-1]);
                     // list of best food for each cat item, and names
                     ArrayList<Food> list = new ArrayList<Food>();
 
                     // use only first 2 item, the last 2 is for worst case
-                    for (int j = 0; j < SIZE; j++) {
+                    for (int j = SIZE; j < SIZE*2; j++) {
                         String item = (String) names[j];
                         // store food obj of that food name
                         list.add(foodsMap.get(item));
                     }
                     // populate data
-                    foodLabel1.setText(names[0]);
-                    foodLabel2.setText(names[1]);
+                    foodLabel1.setText(names[SIZE]);
+                    foodLabel2.setText(names[SIZE+1]);
 
                     setLabels(carbon1Output, water1Output, list.get(0));
                     setLabels(carbon2Output, water2Output, list.get(1));

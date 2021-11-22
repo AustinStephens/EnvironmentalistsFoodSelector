@@ -1,8 +1,10 @@
-package com.example.environmentalistsfoodselector;
+package ufl.ibm.environmentalistsfoodselector;
 
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+
+import ufl.ibm.environmentalistsfoodselector.MainActivity;
 
 /**
  * Example local unit test, which will execute on the development machine (host).

@@ -1,4 +1,4 @@
-package com.example.environmentalistsfoodselector;
+package ufl.ibm.environmentalistsfoodselector;
 
 public class Unit {
 

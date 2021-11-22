@@ -1,9 +1,6 @@
-package com.example.environmentalistsfoodselector;
+package ufl.ibm.environmentalistsfoodselector;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Hashtable;
 
 public class Food {
 

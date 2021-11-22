@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context="ufl.ibm.environmentalistsfoodselector.MainActivity">
 
         <Spinner
             android:id="@+id/Categories"
@@ -40,7 +40,7 @@
         <TextView
             android:id="@+id/foodLabel"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="Select Food"
             android:textAlignment="center"
@@ -59,6 +59,7 @@
             android:layout_marginTop="8dp"
             android:text="Water Used"
             android:textColor="@color/SecondaryText"
+            android:textSize="8sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -71,6 +72,7 @@
             android:text="0"
             android:textAlignment="viewEnd"
             android:textColor="@color/SecondaryText"
+            android:textSize="8sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/foodLabel" />
 
@@ -82,6 +84,7 @@
             android:layout_marginTop="8dp"
             android:text="Gallons"
             android:textColor="@color/SecondaryText"
+            android:textSize="8sp"
             app:layout_constraintStart_toEndOf="@+id/water"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -94,6 +97,7 @@
             android:text="0"
             android:textAlignment="viewEnd"
             android:textColor="@color/SecondaryText"
+            android:textSize="8sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/carbon" />
 
@@ -105,6 +109,7 @@
             android:layout_marginTop="20dp"
             android:text="gCO\u2082e"
             android:textColor="@color/SecondaryText"
+            android:textSize="8sp"
             app:layout_constraintStart_toEndOf="@+id/carbon"
             app:layout_constraintTop_toBottomOf="@+id/foodLabel" />
 
@@ -116,6 +121,7 @@
             android:layout_marginTop="20dp"
             android:text="Carbon Emissions"
             android:textColor="@color/SecondaryText"
+            android:textSize="8sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/foodLabel" />
 
@@ -123,12 +129,13 @@
             android:id="@+id/amount"
             android:layout_width="105dp"
             android:layout_height="50dp"
-            android:layout_marginStart="64dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="4dp"
             android:hint="Amount"
             android:inputType="numberDecimal"
             android:textAlignment="center"
             android:textColor="@color/SecondaryText"
+            android:textSize="10sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -155,23 +162,25 @@
 
         <Button
             android:id="@+id/addItem"
-            android:layout_width="133dp"
-            android:layout_height="46dp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Add to list"
+            android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/similarFoods" />
 
         <Button
             android:id="@+id/itemsPage"
-            android:layout_width="133dp"
-            android:layout_height="46dp"
-            android:layout_marginTop="56dp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:text="Your list"
+            android:textSize="8sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/similarFoods" />
+            app:layout_constraintTop_toBottomOf="@+id/addItem" />
 
         <TextView
             android:id="@+id/textView9"
@@ -181,7 +190,7 @@
             android:text="Recommended Foods"
             android:textAlignment="center"
             android:textColor="@color/SecondaryText"
-            android:textSize="18sp"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"

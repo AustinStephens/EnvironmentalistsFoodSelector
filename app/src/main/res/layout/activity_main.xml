@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context="ufl.ibm.environmentalistsfoodselector.MainActivity">
 
         <Spinner
             android:id="@+id/Categories"
@@ -40,7 +40,7 @@
         <TextView
             android:id="@+id/foodLabel"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="Select Food"
             android:textAlignment="center"
@@ -55,10 +55,11 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_marginStart="52dp"
+            android:layout_marginStart="44dp"
             android:layout_marginTop="8dp"
             android:text="Water Used"
             android:textColor="@color/SecondaryText"
+            android:textSize="9sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -67,10 +68,11 @@
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="112dp"
+            android:layout_marginEnd="106dp"
             android:text="0"
             android:textAlignment="viewEnd"
             android:textColor="@color/SecondaryText"
+            android:textSize="8sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/foodLabel" />
 
@@ -82,6 +84,7 @@
             android:layout_marginTop="8dp"
             android:text="Gallons"
             android:textColor="@color/SecondaryText"
+            android:textSize="8sp"
             app:layout_constraintStart_toEndOf="@+id/water"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -90,10 +93,11 @@
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="112dp"
+            android:layout_marginEnd="106dp"
             android:text="0"
             android:textAlignment="viewEnd"
             android:textColor="@color/SecondaryText"
+            android:textSize="8sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/carbon" />
 
@@ -105,6 +109,7 @@
             android:layout_marginTop="20dp"
             android:text="gCO\u2082e"
             android:textColor="@color/SecondaryText"
+            android:textSize="8sp"
             app:layout_constraintStart_toEndOf="@+id/carbon"
             app:layout_constraintTop_toBottomOf="@+id/foodLabel" />
 
@@ -112,29 +117,31 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_marginStart="52dp"
+            android:layout_marginStart="44dp"
             android:layout_marginTop="20dp"
             android:text="Carbon Emissions"
             android:textColor="@color/SecondaryText"
+            android:textSize="9sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/foodLabel" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/amount"
             android:layout_width="105dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="84dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="16dp"
             android:hint="Amount"
             android:inputType="numberDecimal"
             android:textAlignment="center"
             android:textColor="@color/SecondaryText"
+            android:textSize="10sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <Spinner
             android:id="@+id/units"
-            android:layout_width="101dp"
+            android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="12dp"
@@ -155,23 +162,25 @@
 
         <Button
             android:id="@+id/addItem"
-            android:layout_width="133dp"
-            android:layout_height="46dp"
+            android:layout_width="160dp"
+            android:layout_height="55dp"
             android:layout_marginTop="10dp"
             android:text="Add to list"
+            android:textSize="11sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/similarFoods" />
 
         <Button
             android:id="@+id/itemsPage"
-            android:layout_width="133dp"
-            android:layout_height="46dp"
-            android:layout_marginTop="56dp"
+            android:layout_width="160dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="6dp"
             android:text="Your list"
+            android:textSize="11sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/similarFoods" />
+            app:layout_constraintTop_toBottomOf="@+id/addItem" />
 
         <TextView
             android:id="@+id/textView9"
